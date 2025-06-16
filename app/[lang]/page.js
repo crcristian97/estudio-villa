@@ -3,6 +3,7 @@ import { AboutUs } from "../../components/AboutUs";
 import { LegalServicesSection } from "../../components/Feature";
 import { Stats } from "../../components/Stats";
 import { HowWorks } from "../../components/HowWorks";
+import { Testimonial } from "../../components/Testimonial";
 export default function Page({ params }) {
   return (
     <main>
@@ -11,6 +12,7 @@ export default function Page({ params }) {
       <LegalServicesSection />  
       <Stats />
       <HowWorks />
-    </main>
+      <Testimonial />
+      </main>
   );
 } 

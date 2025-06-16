@@ -54,7 +54,7 @@ export const LegalServicesSection = () => (
         <ul className="space-y-4 mb-4">
           {features.map((item, idx) => (
             <li key={idx} className="flex items-start gap-3">
-              <CheckCircle className="text-[#3E5C76] min-w-[1.5em] min-h-[1.5em]" size={24} />
+              <CheckCircle className="text-[#B49B5A] min-w-[1.5em] min-h-[1.5em]" size={24} />
               <div>
                 <span className="font-semibold text-[#3E5C76]">{item.title}:</span>{" "}
                 <span className="text-[#3E5C76]">{item.description}</span>

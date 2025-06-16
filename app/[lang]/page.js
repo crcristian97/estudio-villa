@@ -4,6 +4,7 @@ import { LegalServicesSection } from "../../components/Feature";
 import { Stats } from "../../components/Stats";
 import { HowWorks } from "../../components/HowWorks";
 import { Testimonial } from "../../components/Testimonial";
+import { CTA2 } from "../../components/Cta";
 export default function Page({ params }) {
   return (
     <main>
@@ -13,6 +14,7 @@ export default function Page({ params }) {
       <Stats />
       <HowWorks />
       <Testimonial />
+      <CTA2 />
       </main>
   );
 } 

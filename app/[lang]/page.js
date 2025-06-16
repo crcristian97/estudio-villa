@@ -7,9 +7,11 @@ import { Testimonial } from "../../components/Testimonial";
 import { CTA2 } from "../../components/Cta";
 import WhyChoose from "../../components/WhyChoose";
 import { FAQ2 } from "../../components/FAQ";
+import Navbar from "../../components/Navbar";
 export default function Page({ params }) {
   return (
     <main>
+      <Navbar />
       <Hero3 />
       <AboutUs />
       <LegalServicesSection />  

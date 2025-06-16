@@ -4,7 +4,7 @@ export const ServicesGrid = () => {
   const services = [
     {
       icon: (cls) => <Building2 className={cls} />,
-      title: "Derecho Societario y Familiar",
+      title: "Derecho societario y familiar",
       description: "Solución de conflictos societarios, incluso en contextos familiares o sucesorios. Experiencia en mediaciones y negociaciones complejas."
     },
     {
@@ -14,17 +14,17 @@ export const ServicesGrid = () => {
     },
     {
       icon: (cls) => <Briefcase className={cls} />,
-      title: "Conflictos Civiles y Comerciales",
+      title: "Conflictos civiles y comerciales",
       description: "Reclamos por incumplimientos, contratos en crisis, daños y perjuicios, y administración de conflictos patrimoniales."
     },
     {
       icon: (cls) => <Gavel className={cls} />,
-      title: "Derecho Penal y Penal Tributario",
+      title: "Derecho penal y penal tributario",
       description: "Defensa integral y representación de víctimas. Análisis de riesgos penales, estrategias de defensa y resolución de casos complejos."
     },
     {
       icon: (cls) => <Handshake className={cls} />,
-      title: "Mediaciones y Soluciones Alternativas",
+      title: "Mediaciones y soluciones alternativas",
       description: "Buscamos evitar el conflicto judicial cuando es posible, priorizando resoluciones efectivas, rápidas y sostenibles."
     }
   ];

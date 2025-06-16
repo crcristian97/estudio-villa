@@ -31,11 +31,11 @@ export const ServicesGrid = () => {
 
   return (
     <div className="w-full bg-white mt-8">
-      <div className="flex w-full divide-x divide-[#E0E0E0]">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 w-full divide-y sm:divide-y-0 sm:divide-x divide-[#E0E0E0]">
         {services.map((service, index) => (
           <div
             key={index}
-            className="group flex-1 flex flex-col items-start px-6 py-8 min-h-[220px] transition-all duration-300 hover:shadow-xl hover:-translate-y-1 bg-white cursor-pointer"
+            className="group flex flex-col items-start px-6 py-8 min-h-[220px] transition-all duration-300 hover:shadow-xl hover:-translate-y-1 bg-white cursor-pointer"
           >
             <div className="mb-4">
               {service.icon("w-8 h-8 text-[#F0EBD8] transition-colors duration-300 group-hover:text-[#3E5C76]")}

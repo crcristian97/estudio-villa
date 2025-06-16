@@ -2,6 +2,7 @@ import { Hero3 } from "../../components/HeroSection";
 import { AboutUs } from "../../components/AboutUs";
 import { LegalServicesSection } from "../../components/Feature";
 import { Stats } from "../../components/Stats";
+import { HowWorks } from "../../components/HowWorks";
 export default function Page({ params }) {
   return (
     <main>
@@ -9,6 +10,7 @@ export default function Page({ params }) {
       <AboutUs />
       <LegalServicesSection />  
       <Stats />
+      <HowWorks />
     </main>
   );
 } 

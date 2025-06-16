@@ -1,10 +1,10 @@
 import Image from "next/image";
 
-// 2-image grid, visually balanced and responsive
+// 4-image grid, visually balanced and responsive
 const AboutImagesGrid = () => (
-  <div className="grid grid-cols-1 gap-6 md:grid-cols-2 h-full">
-    {/* Left image */}
-    <div className="bg-[#F0EBD8] rounded-2xl overflow-hidden relative min-h-[220px] shadow-lg">
+  <div className="grid grid-cols-2 grid-rows-2 gap-4 md:gap-6 lg:gap-8 h-full">
+    {/* Top left */}
+    <div className="bg-[#F0EBD8] rounded-2xl overflow-hidden relative min-h-[160px] md:min-h-[220px] shadow-lg">
       <Image
         src="https://res.cloudinary.com/dgzi8i2ji/image/upload/v1749246869/facultad-de-derecho-buenos-aires.webp"
         alt="Facultad de Derecho Buenos Aires"
@@ -15,11 +15,35 @@ const AboutImagesGrid = () => (
         loading="lazy"
       />
     </div>
-    {/* Right image */}
-    <div className="bg-[#F0EBD8] rounded-2xl overflow-hidden relative min-h-[220px] shadow-lg">
+    {/* Top right */}
+    <div className="bg-[#F0EBD8] rounded-2xl overflow-hidden relative min-h-[160px] md:min-h-[220px] shadow-lg">
       <Image
         src="https://res.cloudinary.com/dgzi8i2ji/image/upload/estudio-juridico-ciudad-buenos-aires.webp"
         alt="Estudio Jurídico en Ciudad de Buenos Aires"
+        fill
+        className="object-cover"
+        sizes="(max-width: 768px) 100vw, 48vw"
+        quality={90}
+        loading="lazy"
+      />
+    </div>
+    {/* Bottom left */}
+    <div className="bg-[#F0EBD8] rounded-2xl overflow-hidden relative min-h-[160px] md:min-h-[220px] shadow-lg">
+      <Image
+        src="https://res.cloudinary.com/dgzi8i2ji/image/upload/v1749392316/derecho-civil-en-buenos-aires.webp"
+        alt="Derecho Civil en Buenos Aires"
+        fill
+        className="object-cover"
+        sizes="(max-width: 768px) 100vw, 48vw"
+        quality={90}
+        loading="lazy"
+      />
+    </div>
+    {/* Bottom right */}
+    <div className="bg-[#F0EBD8] rounded-2xl overflow-hidden relative min-h-[160px] md:min-h-[220px] shadow-lg">
+      <Image
+        src="https://res.cloudinary.com/dgzi8i2ji/image/upload/v1749313341/asesoria-derecho-penal-en-buenos-aires.webp"
+        alt="Asesoría Derecho Penal en Buenos Aires"
         fill
         className="object-cover"
         sizes="(max-width: 768px) 100vw, 48vw"

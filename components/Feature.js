@@ -1,3 +1,4 @@
+
 import Image from "next/image";
 import { CheckCircle } from "lucide-react";
 
@@ -23,6 +24,7 @@ const features = [
       "Asesoramiento integral en la redacción de estatutos, acuerdos de accionistas y estructuras societarias adaptadas a la realidad de cada empresa.",
   },
 ];
+
 
 export const LegalServicesSection = () => (
   <section className="w-full py-20 bg-white">

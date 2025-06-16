@@ -4,44 +4,29 @@ import { useState } from "react";
 
 const faqQuestions = [
   {
-    question: "¿Qué es una sucesión y cuándo es necesaria?",
+    question: "¿Qué es la mediación?",
     answer:
-      "La sucesión es el proceso legal mediante el cual se transmiten los bienes, derechos y obligaciones de una persona fallecida a sus herederos. Es necesaria cuando una persona fallece y deja bienes a su nombre.",
+      "La mediación es un proceso extrajudicial donde un tercero imparcial ayuda a las partes a llegar a un acuerdo. Es una alternativa eficiente y confidencial para resolver conflictos. Promueve la comunicación y puede ser menos costosa que un litigio.",
   },
   {
-    question: "¿Cuánto tiempo dura un proceso sucesorio?",
+    question: "¿Cómo se inicia un litigio?",
     answer:
-      "La duración varía según la complejidad del caso, la cantidad de herederos y bienes, y si existe acuerdo entre las partes. En general, puede demorar entre 6 meses y 2 años.",
+      "Para iniciar un litigio, se debe presentar una demanda ante el tribunal correspondiente. Es fundamental contar con asesoría legal para garantizar que se sigan todos los procedimientos adecuados. Nuestro estudio está aquí para guiarlo en cada paso del proceso.",
   },
   {
-    question: "¿Qué documentación necesito para iniciar una sucesión?",
+    question: "¿Qué es el servicio estrella?",
     answer:
-      "Generalmente se requiere el acta de defunción, partidas de nacimiento y matrimonio de los herederos, DNI, títulos de propiedad y documentación de los bienes a heredar.",
+      "Nuestro servicio estrella, la Resolución Estratégica de Conflictos Complejos, ofrece soluciones integrales para conflictos difíciles. Combinamos un enfoque interdisciplinario con la confidencialidad y eficiencia. Esto nos permite abordar cada caso de manera única y efectiva.",
   },
   {
-    question: "¿Puedo vender una propiedad antes de finalizar la sucesión?",
+    question: "¿Cuánto tiempo toma un proceso legal?",
     answer:
-      "No, hasta que la sucesión no esté inscripta y los bienes adjudicados a los herederos, no es posible vender legalmente una propiedad heredada.",
+      "La duración de un proceso legal puede variar significativamente según la complejidad del caso. Algunos litigios pueden resolverse en meses, mientras que otros pueden tardar años. Nuestro equipo se compromete a mantenerlo informado sobre cada etapa del proceso.",
   },
   {
-    question: "¿Qué pasa si hay desacuerdo entre los herederos?",
+    question: "¿Ofrecen consultas iniciales?",
     answer:
-      "Si no hay acuerdo, el proceso puede judicializarse y demorar más tiempo. Un abogado puede mediar para intentar llegar a una solución consensuada.",
-  },
-  {
-    question: "¿Cuáles son los costos de una sucesión?",
-    answer:
-      "Los costos incluyen honorarios profesionales, tasas judiciales y gastos administrativos. El monto depende del valor de los bienes y la complejidad del trámite.",
-  },
-  {
-    question: "¿Puedo iniciar la sucesión si vivo en otra provincia o en el exterior?",
-    answer:
-      "Sí, es posible iniciar y tramitar la sucesión a distancia, otorgando un poder a un abogado de confianza en la jurisdicción correspondiente.",
-  },
-  {
-    question: "¿Por qué es importante contar con asesoramiento legal en una sucesión?",
-    answer:
-      "Un abogado especializado garantiza que el proceso se realice correctamente, evitando errores, demoras y conflictos entre herederos.",
+      "Sí, ofrecemos consultas iniciales para evaluar su situación legal. Durante esta consulta, discutiremos sus opciones y cómo podemos ayudarle. No dude en contactarnos para programar su cita.",
   },
 ];
 
@@ -93,10 +78,10 @@ export const FAQ2 = () => (
         <div className="flex text-center justify-center items-center gap-4 flex-col">
           <div className="flex gap-2 flex-col">
             <h4 className="text-3xl md:text-5xl tracking-tighter max-w-xl text-center font-regular text-[#1D2D44]">
-              Preguntas frecuentes sobre sucesiones
+              Preguntas frecuentes
             </h4>
             <p className="text-lg leading-relaxed tracking-tight text-[#3E5C76] max-w-xl text-center">
-              Respondemos las dudas más comunes sobre procesos sucesorios en Argentina. Si tenés otra consulta, no dudes en contactarnos.
+              Respondemos las dudas más comunes sobre nuestros servicios legales. Si tenés otra consulta, no dudes en contactarnos.
             </p>
           </div>
           <div>

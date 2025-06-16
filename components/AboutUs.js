@@ -8,6 +8,7 @@ const AboutImagesGrid = () => (
       <Image
         src="https://res.cloudinary.com/dgzi8i2ji/image/upload/v1749246869/facultad-de-derecho-buenos-aires.webp"
         alt="Facultad de Derecho Buenos Aires"
+        title="Facultad de Derecho Buenos Aires"
         fill
         className="object-cover"
         sizes="(max-width: 768px) 100vw, 48vw"
@@ -20,6 +21,7 @@ const AboutImagesGrid = () => (
       <Image
         src="https://res.cloudinary.com/dgzi8i2ji/image/upload/estudio-juridico-ciudad-buenos-aires.webp"
         alt="Estudio Jurídico en Ciudad de Buenos Aires"
+        title="Estudio Jurídico en Ciudad de Buenos Aires"
         fill
         className="object-cover"
         sizes="(max-width: 768px) 100vw, 48vw"
@@ -32,6 +34,7 @@ const AboutImagesGrid = () => (
       <Image
         src="https://res.cloudinary.com/dgzi8i2ji/image/upload/v1749392316/derecho-civil-en-buenos-aires.webp"
         alt="Derecho Civil en Buenos Aires"
+        title="Derecho Civil en Buenos Aires"
         fill
         className="object-cover"
         sizes="(max-width: 768px) 100vw, 48vw"
@@ -44,6 +47,7 @@ const AboutImagesGrid = () => (
       <Image
         src="https://res.cloudinary.com/dgzi8i2ji/image/upload/v1749313341/asesoria-derecho-penal-en-buenos-aires.webp"
         alt="Asesoría Derecho Penal en Buenos Aires"
+        title="Asesoría Derecho Penal en Buenos Aires"
         fill
         className="object-cover"
         sizes="(max-width: 768px) 100vw, 48vw"
@@ -62,10 +66,10 @@ export const AboutUs = () => (
           <span className="uppercase text-xs font-bold tracking-widest text-[#1D2D44] mb-2">
             Sobre la firma
           </span>
-          <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-[#1D2D44] mb-4 leading-tight">
+          <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight text-[#1D2D44] mb-4 leading-tight">
             Villa &amp; Asociados<br />
             <span className="text-[#1D2D44]">Estudio Jurídico</span>
-          </h1>
+          </h2>
           <p className="text-lg md:text-xl text-[#1D2D44] leading-relaxed max-w-xl mb-4">
             Somos un equipo de abogados especializados en derecho sucesorio, societario y civil, con amplia experiencia en la resolución de conflictos complejos en familias empresarias. Nuestro enfoque combina estrategia legal, sensibilidad humana y visión de futuro.
           </p>

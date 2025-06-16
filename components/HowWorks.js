@@ -56,7 +56,7 @@ export const HowWorks = () => (
           <li key={step.title} className="flex-start group relative flex lg:flex-col">
             {idx < steps.length - 1 && (
               <span
-                className="absolute left-[18px] top-14 h-[calc(100%_-_32px)] w-px bg-[#748CAB] lg:right-0 lg:left-auto lg:top-[18px] lg:h-px lg:w-[calc(100%_-_72px)]"
+                className="absolute left-[18px] top-14 h-[calc(100%_-_32px)] w-px bg-[#748CAB] lg:right-0 lg:left-auto lg:top-[18px] lg:h-px lg:w-[calc(100%_-_72px)] cursor-alias"
                 aria-hidden="true"
               ></span>
             )}

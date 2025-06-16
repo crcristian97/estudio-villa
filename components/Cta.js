@@ -25,6 +25,8 @@ export const CTA2 = () => (
         <div className="flex flex-row gap-4 mt-4">
           <a
             href="https://www.linkedin.com/"
+            title="Ir a LinkedIn"
+            aria-label="Ir a LinkedIn"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#3E5C76] text-white hover:bg-[#748CAB] transition-colors font-semibold text-base"

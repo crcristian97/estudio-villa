@@ -43,7 +43,7 @@ function Accordion({ items }) {
       {items.map((item, idx) => (
         <div key={idx}>
           <button
-            className="w-full flex justify-between items-center py-4 px-6 text-left focus:outline-none hover:bg-[#F0EBD8] transition text-[#1D2D44]"
+            className="w-full flex justify-between items-center py-4 px-6 text-left focus:outline-none hover:bg-[#F0EBD8] transition text-[#1D2D44] cursor-pointer"
             onClick={() => handleToggle(idx)}
             aria-expanded={openIndex === idx}
             aria-controls={`faq-content-${idx}`}
@@ -85,7 +85,7 @@ export const FAQ2 = () => (
             </p>
           </div>
           <div>
-            <button className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-[#F0EBD8] text-[#3E5C76] hover:bg-[#3E5C76] hover:text-white transition-colors font-semibold">
+            <button className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-[#F0EBD8] text-[#3E5C76] hover:bg-[#3E5C76] hover:text-white transition-colors font-semibold cursor-pointer">
               ¿Tenés preguntas? Escribinos <PhoneCall className="w-4 h-4" />
             </button>
           </div>

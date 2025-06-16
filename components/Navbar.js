@@ -15,6 +15,7 @@ export default function Navbar() {
               className="inline-block rounded-lg px-2 py-1 text-sm font-medium transition-all duration-200 hover:bg-gray-100"
               style={{ color: "#1D2D44" }}
               href="#sobre-la-firma"
+              title="Ir a Sobre la firma"
             >
               Sobre la firma
             </Link>
@@ -22,6 +23,7 @@ export default function Navbar() {
               className="inline-block rounded-lg px-2 py-1 text-sm font-medium transition-all duration-200 hover:bg-gray-100"
               style={{ color: "#1D2D44" }}
               href="#que-hacemos"
+              title="Ir a Qué hacemos"
             >
               Qué hacemos
             </Link>
@@ -29,6 +31,7 @@ export default function Navbar() {
               className="inline-block rounded-lg px-2 py-1 text-sm font-medium transition-all duration-200 hover:bg-gray-100"
               style={{ color: "#1D2D44" }}
               href="#como-trabajamos"
+              title="Ir a Cómo trabajamos"
             >
               Cómo trabajamos
             </Link>
@@ -36,6 +39,7 @@ export default function Navbar() {
               className="inline-block rounded-lg px-2 py-1 text-sm font-medium transition-all duration-200 hover:bg-gray-100"
               style={{ color: "#1D2D44" }}
               href="#contacto"
+              title="Ir a Contacto"
             >
               Contacto
             </Link>
@@ -43,6 +47,7 @@ export default function Navbar() {
               className="inline-block rounded-lg px-2 py-1 text-sm font-medium transition-all duration-200 hover:bg-gray-100"
               style={{ color: "#1D2D44" }}
               href="#noticias"
+              title="Ir a Noticias"
             >
               Noticias
             </Link>
@@ -56,6 +61,7 @@ export default function Navbar() {
           className="inline-block rounded-lg px-2 py-1 text-sm font-medium transition-all duration-200 hover:bg-gray-100"
           style={{ color: "#1D2D44" }}
           href="#sobre-la-firma"
+          title="Ir a Sobre la firma"
         >
           Sobre la firma
         </Link>
@@ -63,6 +69,7 @@ export default function Navbar() {
           className="inline-block rounded-lg px-2 py-1 text-sm font-medium transition-all duration-200 hover:bg-gray-100"
           style={{ color: "#1D2D44" }}
           href="#que-hacemos"
+          title="Ir a Qué hacemos"
         >
           Qué hacemos
         </Link>
@@ -70,6 +77,7 @@ export default function Navbar() {
           className="inline-block rounded-lg px-2 py-1 text-sm font-medium transition-all duration-200 hover:bg-gray-100"
           style={{ color: "#1D2D44" }}
           href="#como-trabajamos"
+          title="Ir a Cómo trabajamos"
         >
           Cómo trabajamos
         </Link>
@@ -77,6 +85,7 @@ export default function Navbar() {
           className="inline-block rounded-lg px-2 py-1 text-sm font-medium transition-all duration-200 hover:bg-gray-100"
           style={{ color: "#1D2D44" }}
           href="#contacto"
+          title="Ir a Contacto"
         >
           Contacto
         </Link>
@@ -84,6 +93,7 @@ export default function Navbar() {
           className="inline-block rounded-lg px-2 py-1 text-sm font-medium transition-all duration-200 hover:bg-gray-100"
           style={{ color: "#1D2D44" }}
           href="#noticias"
+          title="Ir a Noticias"
         >
           Noticias
         </Link>

@@ -34,8 +34,9 @@ export const LegalServicesSection = () => (
         <div className="w-full max-w-2xl h-[380px] md:h-[520px] bg-[#F0EBD8] rounded-3xl flex items-center justify-center shadow-2xl overflow-hidden relative">
           <Image
             src="https://res.cloudinary.com/dgzi8i2ji/image/upload/derecho-societario-familiar.webp"
-            alt="Derecho Societario y Familiar"
+            alt="Derecho societario y familiar para empresas en buenos aires"
             fill
+            title="Derecho societario y familiar para empresas en buenos aires"
             className="object-cover"
             sizes="(max-width: 1024px) 100vw, 800px"
             quality={90}

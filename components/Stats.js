@@ -122,7 +122,7 @@ export const Stats = () => {
         {statsData.map((stat, idx) => (
           <div
             key={stat.label}
-            className={`flex flex-row items-center bg-white border ${stat.borderColor} rounded-2xl px-12 py-10 ${stat.shadow} transition-transform hover:scale-105 min-w-[270px]`}
+            className={`flex flex-row items-center bg-white border ${stat.borderColor} rounded-2xl px-12 py-10 ${stat.shadow} transition-transform hover:scale-105 min-w-[270px] cursor-pointer`}
           >
             <div className="mr-7">{stat.icon}</div>
             <div className="flex flex-col items-start">

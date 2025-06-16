@@ -30,7 +30,7 @@ const ArrowCircle = ({ direction = "left", ...props }) => (
     type="button"
     aria-label={direction === "left" ? "Anterior" : "Siguiente"}
     {...props}
-    className={`inline-flex items-center justify-center w-9 h-9 rounded-full border border-[#B49B5A] bg-[#3E5C76] text-[#F0EBD8] shadow transition hover:bg-[#B49B5A] hover:text-[#3E5C76] focus:outline-none ${
+    className={`inline-flex items-center justify-center w-9 h-9 rounded-full border border-[#B49B5A] bg-[#3E5C76] text-[#F0EBD8] shadow transition hover:bg-[#B49B5A] hover:text-[#3E5C76] focus:outline-none cursor-pointer ${
       props.disabled ? "opacity-40 cursor-not-allowed" : ""
     } ${props.className || ""}`}
     tabIndex={props.disabled ? -1 : 0}
@@ -88,9 +88,9 @@ export const Testimonial = () => {
       <div className="w-full mx-auto max-w-xl flex flex-col justify-center py-16 sm:py-20 md:py-24 relative px-2 sm:px-4 md:px-8">
         <div className="prose text-gray-500 prose-sm prose-headings:font-normal prose-headings:text-xl">
           <div>
-            <h1 className="text-2xl sm:text-4xl md:text-5xl font-extrabold text-[#1D2D44] mb-2 text-center">
+            <h2 className="text-2xl sm:text-4xl md:text-5xl font-extrabold text-[#1D2D44] mb-2 text-center">
               Testimonios
-            </h1>
+            </h2>
             <p className="text-base sm:text-lg md:text-xl font-semibold text-[#3E5C76] text-center">
               Lo que dicen nuestros clientes
             </p>

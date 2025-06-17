@@ -9,6 +9,7 @@ import WhyChoose from "../../components/WhyChoose";
 import { FAQ2 } from "../../components/FAQ";
 import Navbar from "../../components/Navbar";
 import { Contact } from "../../components/Contact";
+import Footer from "../../components/Footer";
 export default function Page({ params }) {
   return (
     <main>
@@ -23,6 +24,7 @@ export default function Page({ params }) {
       <WhyChoose />
       <FAQ2 />
       <Contact />
+      <Footer />
       </main>
   );
 } 

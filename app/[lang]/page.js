@@ -8,6 +8,7 @@ import { CTA2 } from "../../components/Cta";
 import WhyChoose from "../../components/WhyChoose";
 import { FAQ2 } from "../../components/FAQ";
 import Navbar from "../../components/Navbar";
+import { Contact } from "../../components/Contact";
 export default function Page({ params }) {
   return (
     <main>
@@ -21,6 +22,7 @@ export default function Page({ params }) {
       <CTA2 />
       <WhyChoose />
       <FAQ2 />
+      <Contact />
       </main>
   );
 } 

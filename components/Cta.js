@@ -10,6 +10,7 @@ export const CTA2 = () => (
       backgroundPosition: "center",
       backgroundRepeat: "no-repeat",
     }}
+    id="noticias"
   >
     <div className="absolute inset-0 bg-[#F0EBD8]/80 pointer-events-none" aria-hidden="true"></div>
     <div className="container mx-auto relative z-10">

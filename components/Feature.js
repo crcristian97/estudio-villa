@@ -27,7 +27,7 @@ const features = [
 
 
 export const LegalServicesSection = () => (
-  <section className="w-full py-20 bg-white">
+  <section className="w-full py-20 bg-white" id="que-hacemos" >
     <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
       {/* Imagen destacada a la izquierda en desktop, arriba en mobile */}
       <div className="order-1 lg:order-none flex items-center justify-center">

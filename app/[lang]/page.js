@@ -22,8 +22,8 @@ export default function Page({ params }) {
       <Testimonial />
       <CTA2 />
       <WhyChoose />
-      <FAQ2 />
       <Contact />
+      <FAQ2 />
       <Footer />
       </main>
   );

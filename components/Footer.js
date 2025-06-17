@@ -9,14 +9,14 @@ const Footer = () => (
         </div>
         <div className="p-5">
           <div className="text-sm uppercase text-[#1D2D44] font-bold">Estudio</div>
-          <a className="my-3 block hover:text-[#BFA181]" href="/servicios">
-            Servicios
+          <a className="my-3 block hover:text-[#BFA181]" href="#que-hacemos">
+            Que hacemos
           </a>
-          <a className="my-3 block hover:text-[#BFA181]" href="/proyectos">
-            Proyectos
+          <a className="my-3 block hover:text-[#BFA181]" href="#sobre-la-firma">
+            Sobre la firma
           </a>
-          <a className="my-3 block hover:text-[#BFA181]" href="/nosotros">
-            Nosotros
+          <a className="my-3 block hover:text-[#BFA181]" href="#como-trabajamos">
+            Como trabajamos
           </a>
         </div>
        

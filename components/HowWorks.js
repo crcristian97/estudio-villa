@@ -40,7 +40,7 @@ const steps = [
 ];
 
 export const HowWorks = () => (
-  <section className="bg-white py-12 sm:py-16 lg:py-20 xl:py-24">
+  <section className="bg-white py-12 sm:py-16 lg:py-20 xl:py-24" id="como-trabajamos">
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div className="text-center">
         <p className="text-sm font-bold uppercase tracking-widest text-[#3E5C76]">¿Cómo trabajamos?</p>

@@ -35,14 +35,7 @@ export default function Navbar() {
             >
               Cómo trabajamos
             </Link>
-            <Link
-              className="inline-block rounded-lg px-2 py-1 text-sm font-medium transition-all duration-200 hover:bg-gray-100"
-              style={{ color: "#1D2D44" }}
-              href="#contacto"
-              title="Ir a Contacto"
-            >
-              Contacto
-            </Link>
+            
             <Link
               className="inline-block rounded-lg px-2 py-1 text-sm font-medium transition-all duration-200 hover:bg-gray-100"
               style={{ color: "#1D2D44" }}
@@ -50,6 +43,14 @@ export default function Navbar() {
               title="Ir a Noticias"
             >
               Noticias
+            </Link>
+            <Link
+              className="inline-block rounded-lg px-2 py-1 text-sm font-medium transition-all duration-200 hover:bg-gray-100"
+              style={{ color: "#1D2D44" }}
+              href="#contacto"
+              title="Ir a Contacto"
+            >
+              Contacto
             </Link>
           </nav>
           {/* Auth buttons */}
@@ -84,18 +85,18 @@ export default function Navbar() {
         <Link
           className="inline-block rounded-lg px-2 py-1 text-sm font-medium transition-all duration-200 hover:bg-gray-100"
           style={{ color: "#1D2D44" }}
-          href="#contacto"
-          title="Ir a Contacto"
-        >
-          Contacto
-        </Link>
-        <Link
-          className="inline-block rounded-lg px-2 py-1 text-sm font-medium transition-all duration-200 hover:bg-gray-100"
-          style={{ color: "#1D2D44" }}
           href="#noticias"
           title="Ir a Noticias"
         >
           Noticias
+        </Link>
+        <Link
+          className="inline-block rounded-lg px-2 py-1 text-sm font-medium transition-all duration-200 hover:bg-gray-100"
+          style={{ color: "#1D2D44" }}
+          href="#contacto"
+          title="Ir a Contacto"
+        >
+          Contacto
         </Link>
       </nav>
     </header>

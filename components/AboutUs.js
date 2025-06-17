@@ -59,7 +59,7 @@ const AboutImagesGrid = () => (
 );
 
 export const AboutUs = () => (
-  <section className="w-full py-20 lg:py-36 bg-[#F9FAFB]">
+  <section className="w-full py-20 lg:py-36 bg-[#F9FAFB] " id="sobre-la-firma">
     <div className="container mx-auto">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         <div className="flex flex-col gap-6">

@@ -1,3 +1,4 @@
+'use client';
 import { MoveRight, PhoneCall } from "lucide-react";
 import Image from "next/image";
 import { ServicesGrid } from "./ServicesGrid";
@@ -17,9 +18,14 @@ export const Hero3 = () => (
             </h1>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 w-full">
-            <button className="inline-flex items-center justify-center gap-2 px-4 py-2 bg-[#3E5C76] border-[#F0EBD8] text-white rounded-md hover:bg-[#748CAB] transition-colors w-full sm:w-auto cursor-pointer">
+            <a
+              href="https://wa.me/541126493333"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 px-4 py-2 bg-[#3E5C76] border-[#F0EBD8] text-white rounded-md hover:bg-[#748CAB] transition-colors w-full sm:w-auto cursor-pointer"
+            >
               Consultá por WhatsApp <PhoneCall className="w-4 h-4" />
-            </button>
+            </a>
             <button className="inline-flex items-center justify-center gap-2 px-4 py-2 border bg-[#F0EBD8] border-[#3E5C76] rounded-md hover:bg-gray-100 transition-colors text-[#3E5C76] w-full sm:w-auto cursor-pointer">
               Conocé tus derechos <MoveRight className="w-4 h-4" />
             </button>

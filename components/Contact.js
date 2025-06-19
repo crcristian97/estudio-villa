@@ -160,24 +160,7 @@ export const Contact = () => {
                     <p className="text-xs mt-1" style={{ color: "#ef4444" }}>{errors.message}</p>
                   )}
                 </div>
-                <div className="mb-6 inline-block min-h-[1.5rem] justify-center pl-[1.5rem] md:flex">
-                  <input
-                    className="relative float-left mt-[0.15rem] mr-[6px] -ml-[1.5rem] h-[1.125rem] w-[1.125rem] appearance-none rounded-[0.25rem] border-[0.125rem] border-solid outline-none checked:border-primary checked:bg-primary hover:cursor-pointer"
-                    style={{ borderColor: "#3D5C76" }}
-                    type="checkbox"
-                    name="sendCopy"
-                    id="contactSendCopy"
-                    checked={form.sendCopy}
-                    onChange={handleChange}
-                  />
-                  <label
-                    className="inline-block pl-[0.15rem] hover:cursor-pointer"
-                    style={{ color: "#3D5C76" }}
-                    htmlFor="contactSendCopy"
-                  >
-                    Enviarme una copia de este mensaje
-                  </label>
-                </div>
+               
                 <button
                   type="submit"
                   className="mb-6 w-full rounded px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal lg:mb-0"

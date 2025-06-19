@@ -5,7 +5,7 @@ const Footer = () => (
     <div className="bg-white">
       <div className="max-w-screen-lg px-4 sm:px-6 text-[#2B2B2B] sm:grid md:grid-cols-4 sm:grid-cols-2 mx-auto">
         <div className="p-5">
-          <h3 className="font-bold text-xl text-[#1D2D44]">Estudio Villa</h3>
+          <h3 className="font-bold text-xl text-[#1D2D44]">Villa & Asociados</h3>
         </div>
         <div className="p-5">
           <div className="text-sm uppercase text-[#1D2D44] font-bold">Estudio</div>
@@ -37,7 +37,7 @@ const Footer = () => (
     <div className="bg-white pt-2">
       <div className="flex pb-5 px-3 m-auto pt-5 border-t border-[#BFA181] text-[#2B2B2B] text-sm flex-col max-w-screen-lg items-center">
         <div className="my-5">
-          © {new Date().getFullYear()} Estudio Villa. Todos los derechos reservados.
+          © {new Date().getFullYear()} Estudio Roberto Villa & Asociados. Todos los derechos reservados.
         </div>
         <div>
           Diseñado por{" "}

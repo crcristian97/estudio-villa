@@ -52,7 +52,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between">
           {/* Logo / Brand */}
           <div className="flex shrink-0">
-            <span className="text-xl font-bold" style={{ color: "#1D2D44" }}>Estudio Villa</span>
+            <span className="text-xl font-bold" style={{ color: "#1D2D44" }}>Villa & Asociados</span>
           </div>
           {/* Main navigation */}
           <nav className="hidden md:flex md:items-center md:justify-center md:gap-5">

@@ -38,7 +38,7 @@ export const Contact = () => (
               </div>
               <div className="border-t border-gray-200 px-6 py-4">
                 <h3 className="text-lg font-medium text-[#1D2D44]">Contacto</h3>
-                <p className="mt-1 text-[#1D2D44]">Email: rovilla@gmail.com</p>
+                <p className="mt-1 text-[#1D2D44]">Email: estudio@robertovillayasociados.com.ar</p>
                 <p className="mt-1 text-[#1D2D44]">Teléfono: +54 11 2649 3333</p>
               </div>
             </div>

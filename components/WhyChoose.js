@@ -2,27 +2,33 @@ import { CheckCircle } from "lucide-react";
 
 const features = [
   {
-    title: "Especialización en Sucesiones",
+    title: "Más que abogados, facilitadores de acuerdos",
     description:
-      "Contamos con amplia experiencia en procesos sucesorios, brindando asesoramiento claro y acompañamiento en cada etapa.",
+      "Acompañamos a nuestros clientes en la construcción de soluciones consensuadas, priorizando el diálogo y la prevención de conflictos.",
     icon: <CheckCircle className="text-white w-7 h-7" />,
   },
   {
-    title: "Atención Personalizada",
+    title: "Experiencia en familias empresarias y conflictos societarios",
     description:
-      "Cada caso es único. Escuchamos tus necesidades y diseñamos estrategias legales a medida.",
+      "Amplia trayectoria asesorando a familias empresarias y resolviendo disputas societarias con visión estratégica.",
     icon: <CheckCircle className="text-white w-7 h-7" />,
   },
   {
-    title: "Transparencia y Confianza",
+    title: "Soluciones jurídicas con enfoque humano",
     description:
-      "Priorizamos la comunicación clara y la honestidad en todo momento, para que tomes decisiones informadas.",
+      "Entendemos la importancia de los vínculos y diseñamos estrategias legales que cuidan tanto lo patrimonial como lo personal.",
     icon: <CheckCircle className="text-white w-7 h-7" />,
   },
   {
-    title: "Resolución Ágil",
+    title: "Confidencialidad, transparencia y seguimiento activo",
     description:
-      "Buscamos soluciones eficientes para que tu proceso avance sin demoras innecesarias.",
+      "Garantizamos absoluta reserva, comunicación clara y acompañamiento permanente en cada etapa del proceso.",
+    icon: <CheckCircle className="text-white w-7 h-7" />,
+  },
+  {
+    title: "Resultados sostenibles que cuidan vínculos y patrimonio",
+    description:
+      "Buscamos soluciones duraderas que protejan tus relaciones y tu legado familiar o empresarial.",
     icon: <CheckCircle className="text-white w-7 h-7" />,
   },
 ];
@@ -38,7 +44,9 @@ export default function WhyChoose() {
               <h2 className="text-3xl md:text-4xl font-semibold text-[#1D2D44] mb-4 tracking-tight">
                 ¿Por qué elegir Estudio Villa?
               </h2>
-            
+              <p className="text-lg text-[#3E5C76] font-medium mb-2">
+                El respaldo en el que podés confiar
+              </p>
             </div>
           </div>
           {/* Right column: Features */}

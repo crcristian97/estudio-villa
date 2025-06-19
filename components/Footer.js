@@ -22,8 +22,8 @@ const Footer = () => (
        
         <div className="p-5">
           <div className="text-sm uppercase text-[#1D2D44] font-bold">Contacto</div>
-          <a className="my-3 block hover:text-[#BFA181]" href="mailto:rovilla@gmail.com">
-          rovilla@gmail.com
+          <a className="my-3 block hover:text-[#BFA181]" href="mailto:estudio@robertovillayasociados.com.ar">
+          estudio@robertovillayasociados.com.ar
           </a>
           <a className="my-3 block hover:text-[#BFA181]" href="https://wa.me/541126493333" target="_blank" rel="noopener noreferrer">
             +54 11 2649 3333

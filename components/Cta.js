@@ -17,10 +17,10 @@ export const CTA2 = () => (
       <div className="flex flex-col text-center py-14 gap-4 items-center">
         <div className="flex flex-col gap-2">
           <h3 className="text-3xl md:text-5xl tracking-tighter max-w-xl font-regular text-[#1D2D44]">
-            Mirá las notas del blog y los posteos recientes
+            Explorá artículos y casos reales
           </h3>
           <p className="text-lg leading-relaxed tracking-tight text-[#3E5C76] max-w-xl">
-            Encontrá información útil, consejos legales y novedades sobre sucesiones, empresas familiares y conflictos societarios.
+            Sobre resolución de conflictos, herencias empresarias y planificación sucesoria.
           </p>
         </div>
         <div className="flex flex-row gap-4 mt-4">

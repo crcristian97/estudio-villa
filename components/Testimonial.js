@@ -4,24 +4,19 @@ import React, { useRef, useState } from "react";
 
 const testimonials = [
   {
-    text: `"I've been using this services for years, and they
-           consistently exceed my expectations. The support team is
-           fantastic! "`,
+    text: `"He utilizado estos servicios durante años y siempre superan mis expectativas. ¡El equipo de soporte es fantástico!"`,
     name: "Pepe Madrid",
-    title: "CEO of Something INC"
+    title: "CEO de Algo S.A."
   },
   {
-    text: `"The financial solutions they offer are top-notch. I've
-           seen significant growth in my investments since I
-           started using their platform. "`,
+    text: `"Las soluciones financieras que ofrecen son de primer nivel. He visto un crecimiento significativo en mis inversiones desde que empecé a usar su plataforma."`,
     name: "Michael Andreuzza",
-    title: "CEO of Something INC"
+    title: "CEO de Algo S.A."
   },
   {
-    text: `"Their customer service is unparalleled. They really go
-           the extra mile to ensure customer satisfaction. "`,
+    text: `"Su atención al cliente es inigualable. Realmente hacen un esfuerzo extra para asegurar la satisfacción del cliente."`,
     name: "Fernando Pio",
-    title: "CEO of Something INC"
+    title: "CEO de Algo S.A."
   }
 ];
 

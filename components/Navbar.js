@@ -1,7 +1,7 @@
 'use client';
 import Link from "next/link";
 import { useState, useEffect } from "react";
-
+import Image from "next/image";
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isScrollingUp, setIsScrollingUp] = useState(false);
@@ -51,8 +51,22 @@ export default function Navbar() {
       <div className="px-4">
         <div className="flex items-center justify-between">
           {/* Logo / Brand */}
-          <div className="flex shrink-0">
-            <span className="text-xl font-bold" style={{ color: "#1D2D44" }}>Villa & Asociados</span>
+          <div className="flex items-center shrink-0 gap-2">
+            {/* 
+              If you don't see the logo, make sure:
+              1. The file "public/VillaLogo.png" exists in your Next.js project.
+              2. The file name and extension match exactly (case-sensitive).
+              3. The Image component is imported from "next/image".
+            */}
+            <Image
+              title="Logo de Villa & Asociados"
+              src="/VillaLogo.png"
+              width={100}
+              height={100}
+              alt="Villa & Asociados Logo"
+              className="h-10 w-10 object-contain"
+              style={{ objectFit: 'contain' }}
+            />
           </div>
           {/* Main navigation */}
           <nav className="hidden md:flex md:items-center md:justify-center md:gap-5">

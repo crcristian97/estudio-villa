@@ -3,13 +3,30 @@ import { MoveRight, PhoneCall } from "lucide-react";
 import Image from "next/image";
 import { ServicesGrid } from "./ServicesGrid";
 import Link from "next/link";
+import { motion } from "framer-motion";
+
+const textVariants = {
+  hidden: { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" } },
+};
+
+const imageVariants = {
+  hidden: { opacity: 0, scale: 0.95 },
+  visible: { opacity: 1, scale: 1, transition: { duration: 0.8, ease: "easeOut" } },
+};
 
 export const Hero3 = () => (
   <section className="w-full">
     <div className="container px-4 md:px-0">
       <div className="grid grid-cols-1 gap-8 items-center lg:grid-cols-2">
         {/* Text Section */}
-        <div className="flex flex-col gap-6">
+        <motion.div
+          className="flex flex-col gap-6"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5 }}
+          variants={textVariants}
+        >
           <div className="flex flex-col gap-4">
             <h2 className="text-3xl sm:text-4xl md:text-5xl max-w-lg tracking-tighter text-left font-regular">
               Resolución estratégica de conflictos legales complejos
@@ -31,9 +48,15 @@ export const Hero3 = () => (
               Ver servicios <MoveRight className="w-4 h-4" />
             </Link>
           </div>
-        </div>
+        </motion.div>
         {/* Image Section */}
-        <div className="bg-muted rounded-md aspect-square overflow-hidden w-full max-w-md mx-auto lg:max-w-full">
+        <motion.div
+          className="bg-muted rounded-md aspect-square overflow-hidden w-full max-w-md mx-auto lg:max-w-full"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5 }}
+          variants={imageVariants}
+        >
           <Image
             width={800}
             height={800}
@@ -45,7 +68,7 @@ export const Hero3 = () => (
             loading="lazy"
             sizes="(max-width: 1024px) 100vw, 50vw"
           />
-        </div>
+        </motion.div>
       </div>
       <div className="mt-8">
         <ServicesGrid />

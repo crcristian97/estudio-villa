@@ -1,50 +1,274 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
+import {
+  MapPin,
+  Clock,
+  Mail,
+  Phone,
+} from "lucide-react";
 
-export const Contact = () => (
-  <section className="bg-white" id="contacto">
-    <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:py-20 lg:px-8">
-      <div className="max-w-2xl lg:max-w-4xl mx-auto text-center">
-        <h2 className="text-3xl font-extrabold text-[#1D2D44]">Visitá nuestro estudio</h2>
-        <p className="mt-4 text-lg text-[#1D2D44]">
-          Estamos en el corazón de la Ciudad de Buenos Aires. Acercate para una consulta o escribinos por cualquier duda.
-        </p>
+export const Contact = () => {
+  // Form state
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    message: "",
+    sendCopy: false,
+  });
+  const [errors, setErrors] = useState({});
+  const [submitted, setSubmitted] = useState(false);
+
+  // Validation
+  const validate = () => {
+    const newErrors = {};
+    if (!form.name.trim()) newErrors.name = "El nombre es obligatorio.";
+    if (!form.email.trim()) {
+      newErrors.email = "El email es obligatorio.";
+    } else if (
+      !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(form.email)
+    ) {
+      newErrors.email = "El email no es válido.";
+    }
+    if (!form.message.trim()) newErrors.message = "El mensaje es obligatorio.";
+    return newErrors;
+  };
+
+  // Handle form submit
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const validation = validate();
+    setErrors(validation);
+    if (Object.keys(validation).length === 0) {
+      setSubmitted(true);
+      // Aquí podrías enviar el formulario a un backend o servicio externo
+      // Por ahora solo reseteamos el formulario
+      setForm({
+        name: "",
+        email: "",
+        message: "",
+        sendCopy: false,
+      });
+      setTimeout(() => setSubmitted(false), 4000);
+    }
+  };
+
+  // Handle input change
+  const handleChange = (e) => {
+    const { name, value, type, checked } = e.target;
+    setForm((prev) => ({
+      ...prev,
+      [name]: type === "checkbox" ? checked : value,
+    }));
+  };
+
+
+  return (
+    <section className="mb-32" id="contacto">
+      <div
+        id="map"
+        className="relative h-[300px] overflow-hidden bg-cover bg-[50%] bg-no-repeat"
+      >
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.1007490339516!2d-58.3712874!3d-34.601613799999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a335332ebb2e8b%3A0xfd16dec2f5c5057!2s25%20de%20Mayo%20577%2C%20C1002ABK%20Cdad.%20Aut%C3%B3noma%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1750165481349!5m2!1ses-419!2sar"
+          width="100%"
+          height="480"
+          style={{ border: 0 }}
+          allowFullScreen=""
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+          title="Mapa Google Buenos Aires"
+        ></iframe>
       </div>
-      <div className="mt-16 lg:mt-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="rounded-lg overflow-hidden">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.1007490339516!2d-58.3712874!3d-34.601613799999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a335332ebb2e8b%3A0xfd16dec2f5c5057!2s25%20de%20Mayo%20577%2C%20C1002ABK%20Cdad.%20Aut%C3%B3noma%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1750165481349!5m2!1ses-419!2sar"
-              width="600"
-              height="450"
-              style={{ border: 0 }}
-              allowFullScreen=""
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="Mapa Google Buenos Aires"
-            ></iframe>
-          </div>
-          <div>
-            <div className="max-w-full mx-auto rounded-lg overflow-hidden bg-white shadow cursor-pointer">
-              <div className="px-6 py-4">
-                <h3 className="text-lg font-medium text-[#1D2D44]">Dirección</h3>
-                <p className="mt-1 text-[#1D2D44]">25 de Mayo 577, C1002ABK, Ciudad Autónoma de Buenos Aires, Argentina</p>
-              </div>
-              <div className="border-t border-gray-200 px-6 py-4">
-                <h3 className="text-lg font-medium text-[#1D2D44]">Horarios</h3>
-                <p className="mt-1 text-[#1D2D44]">Lunes a Viernes: 9:00 a 18:00 hs</p>
-                <p className="mt-1 text-[#1D2D44]">Sábados: 10:00 a 14:00 hs</p>
-                <p className="mt-1 text-[#1D2D44]">Domingos: Cerrado</p>
-              </div>
-              <div className="border-t border-gray-200 px-6 py-4">
-                <h3 className="text-lg font-medium text-[#1D2D44]">Contacto</h3>
-                <p className="mt-1 text-[#1D2D44]">Email: estudio@robertovillayasociados.com.ar</p>
-                <p className="mt-1 text-[#1D2D44]">Teléfono: +54 11 2649 3333</p>
+      <div className="container px-6 md:px-12">
+        <div className="block rounded-lg bg-[hsla(0,0%,100%,0.8)] px-6 py-12 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)]  md:py-16 md:px-12 -mt-[100px] backdrop-blur-[30px] border border-primary">
+          <div className="flex flex-wrap">
+            {/* Formulario */}
+            <div className="mb-12 w-full shrink-0 grow-0 basis-auto md:px-3 lg:mb-0 lg:w-5/12 lg:px-6">
+              <form onSubmit={handleSubmit} noValidate>
+                <div className="relative mb-6">
+                  <input
+                    type="text"
+                    name="name"
+                    id="contactName"
+                    className={`peer block min-h-[auto] w-full rounded border-2 bg-transparent py-[0.32rem] px-3 leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none`}
+                    style={{
+                      color: "#3D5C76",
+                      borderColor: errors.name ? "#ef4444" : "#3D5C76"
+                    }}
+                    value={form.name}
+                    onChange={handleChange}
+                    placeholder=" "
+                  />
+                  <label
+                    className="pointer-events-none absolute top-0 left-3 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none"
+                    style={{ color: "#3D5C76" }}
+                    htmlFor="contactName"
+                  >
+                    Nombre
+                  </label>
+                  {errors.name && (
+                    <p className="text-xs mt-1" style={{ color: "#ef4444" }}>{errors.name}</p>
+                  )}
+                </div>
+                <div className="relative mb-6">
+                  <input
+                    type="email"
+                    name="email"
+                    id="contactEmail"
+                    className={`peer block min-h-[auto] w-full rounded border-2 bg-transparent py-[0.32rem] px-3 leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none`}
+                    style={{
+                      color: "#3D5C76",
+                      borderColor: errors.email ? "#ef4444" : "#3D5C76"
+                    }}
+                    value={form.email}
+                    onChange={handleChange}
+                    placeholder=" "
+                  />
+                  <label
+                    className="pointer-events-none absolute top-0 left-3 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none"
+                    style={{ color: "#3D5C76" }}
+                    htmlFor="contactEmail"
+                  >
+                    Email
+                  </label>
+                  {errors.email && (
+                    <p className="text-xs mt-1" style={{ color: "#ef4444" }}>{errors.email}</p>
+                  )}
+                </div>
+                <div className="relative mb-6">
+                  <textarea
+                    name="message"
+                    id="contactMessage"
+                    rows={3}
+                    className={`peer block min-h-[auto] w-full rounded border-2 bg-transparent py-[0.32rem] px-3 leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none`}
+                    style={{
+                      color: "#3D5C76",
+                      borderColor: errors.message ? "#ef4444" : "#3D5C76"
+                    }}
+                    value={form.message}
+                    onChange={handleChange}
+                    placeholder=" "
+                  />
+                  <label
+                    htmlFor="contactMessage"
+                    className="pointer-events-none absolute top-0 left-3 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none"
+                    style={{ color: "#3D5C76" }}
+                  >
+                    Mensaje
+                  </label>
+                  {errors.message && (
+                    <p className="text-xs mt-1" style={{ color: "#ef4444" }}>{errors.message}</p>
+                  )}
+                </div>
+                <div className="mb-6 inline-block min-h-[1.5rem] justify-center pl-[1.5rem] md:flex">
+                  <input
+                    className="relative float-left mt-[0.15rem] mr-[6px] -ml-[1.5rem] h-[1.125rem] w-[1.125rem] appearance-none rounded-[0.25rem] border-[0.125rem] border-solid outline-none checked:border-primary checked:bg-primary hover:cursor-pointer"
+                    style={{ borderColor: "#3D5C76" }}
+                    type="checkbox"
+                    name="sendCopy"
+                    id="contactSendCopy"
+                    checked={form.sendCopy}
+                    onChange={handleChange}
+                  />
+                  <label
+                    className="inline-block pl-[0.15rem] hover:cursor-pointer"
+                    style={{ color: "#3D5C76" }}
+                    htmlFor="contactSendCopy"
+                  >
+                    Enviarme una copia de este mensaje
+                  </label>
+                </div>
+                <button
+                  type="submit"
+                  className="mb-6 w-full rounded px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal lg:mb-0"
+                  style={{ backgroundColor: "#3D5C76", color: "#fff" }}
+                >
+                  Enviar
+                </button>
+                {submitted && (
+                  <div className="text-center text-sm mt-2" style={{ color: "#22c55e" }}>
+                    ¡Mensaje enviado! Nos pondremos en contacto pronto.
+                  </div>
+                )}
+              </form>
+            </div>
+            {/* Info de contacto */}
+            <div className="w-full shrink-0 grow-0 basis-auto lg:w-7/12">
+              <div className="flex flex-wrap">
+                {/* Dirección */}
+                <div className="mb-12 w-full shrink-0 grow-0 basis-auto md:w-6/12 md:px-3 lg:w-full lg:px-6 xl:w-6/12">
+                  <div className="flex items-start">
+                    <div className="shrink-0">
+                      <div className="inline-block rounded-md bg-[#1C2D44] p-4">
+                        {/* Icono dirección */}
+                        <MapPin className="h-6 w-6" color="#F0EBD8" />
+                      </div>
+                    </div>
+                    <div className="ml-6 grow">
+                      <p className="mb-2 font-bold" style={{ color: "#3D5C76" }}>Dirección</p>
+                      <p className="text-sm" style={{ color: "#3D5C76" }}>
+                        25 de Mayo 577, C1002ABK,<br />
+                        Ciudad Autónoma de Buenos Aires, Argentina
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                {/* Horarios */}
+                <div className="mb-12 w-full shrink-0 grow-0 basis-auto md:w-6/12 md:px-3 lg:w-full lg:px-6 xl:w-6/12">
+                  <div className="flex items-start">
+                    <div className="shrink-0">
+                      <div className="inline-block rounded-md bg-[#1C2D44] p-4">
+                        {/* Icono reloj */}
+                        <Clock className="w-7 h-7" color="#F0EBD8" />
+                      </div>
+                    </div>
+                    <div className="ml-6 grow">
+                      <p className="mb-2 font-bold" style={{ color: "#3D5C76" }}>Horarios</p>
+                      <p className="text-sm" style={{ color: "#3D5C76" }}>
+                        Lunes a Viernes: 9:00 a 18:00 hs<br />
+                        Sábados: 10:00 a 14:00 hs<br />
+                        Domingos: Cerrado
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                {/* Email y Teléfono */}
+                <div className="mb-12 w-full shrink-0 grow-0 basis-auto md:mb-0 md:w-6/12 md:px-3 lg:mb-12 lg:w-full lg:px-6 xl:w-6/12">
+                  <div className="flex items-start">
+                    <div className="shrink-0">
+                      <div className="inline-block rounded-md bg-[#1C2D44] p-4">
+                        {/* Icono email */}
+                        <Mail className="w-6 h-6" color="#F0EBD8" />
+                      </div>
+                    </div>
+                    <div className="ml-6 grow">
+                      <p className="mb-2 font-bold" style={{ color: "#3D5C76" }}>Email</p>
+                      <p style={{ color: "#3D5C76" }}>
+                        estudio@robertovillayasociados.com.ar
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div className="w-full shrink-0 grow-0 basis-auto md:w-6/12 md:px-3 lg:w-full lg:px-6 xl:mb-12 xl:w-6/12">
+                  <div className="flex items-start">
+                    <div className="shrink-0">
+                      <div className="inline-block rounded-md bg-[#1C2D44] p-4">
+                        {/* Icono teléfono */}
+                        <Phone className="w-6 h-6" color="#F0EBD8" />
+                      </div>
+                    </div>
+                    <div className="ml-6 grow">
+                      <p className="mb-2 font-bold" style={{ color: "#3D5C76" }}>Teléfono</p>
+                      <p style={{ color: "#3D5C76" }}>+54 11 2649 3333</p>
+                    </div>
+                  </div>
+                </div>
+                {/* Fin info */}
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-);
+    </section>
+  );
+};

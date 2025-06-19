@@ -2,6 +2,70 @@
 import { PhoneCall } from "lucide-react";
 import { useState } from "react";
 
+// Utilidad para poner en negrita ciertas palabras/frases clave en las respuestas
+function boldify(text) {
+  // Lista de frases/palabras a poner en negrita (puedes ajustar según necesidad)
+  const boldWords = [
+    "mediación",
+    "demanda judicial",
+    "consulta",
+    "acuerdos",
+    "juicio",
+    "herederos",
+    "asesoramiento jurídico",
+    "colación hereditaria",
+    "reducción de donaciones inoficiosas",
+    "empresa",
+    "sociedades",
+    "protocolos familiares",
+    "planificación sucesoria",
+    "patrimonio",
+    "abogado",
+    "estrategia jurídica",
+    "acuerdos duraderos",
+    "solución justa",
+    "familias empresarias",
+    "visión estratégica",
+    "conocimiento interdisciplinario",
+    "conflictos",
+    "bienes",
+    "donaciones encubiertas",
+    "empresas familiares",
+    "protocolos",
+    "disputas",
+    "derechos",
+    "litiga",
+    "facilita acuerdos",
+    "protege tus derechos",
+    "soluciones",
+    "extrajudicial",
+    "acuerdos anticipados",
+    "pactos sucesorios",
+    "reparto",
+    "usufructo"
+  ];
+
+  // Ordenar por longitud descendente para evitar solapamientos
+  boldWords.sort((a, b) => b.length - a.length);
+
+  // Reemplazar cada palabra/frase por su versión en <strong>
+  let result = text;
+  boldWords.forEach(word => {
+    // Escapar caracteres especiales para RegExp
+    const escaped = word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    // Solo poner en negrita si no está ya dentro de una etiqueta <strong>
+    result = result.replace(
+      new RegExp(`(?<!<strong[^>]*?>)(${escaped})(?![^<]*?</strong>)`, "gi"),
+      '<strong class="font-semibold text-[#1D2D44]">$1</strong>'
+    );
+  });
+
+  // Manejar saltos de línea como <br />
+  result = result.replace(/\n/g, "<br />");
+
+  return result;
+}
+
 const faqQuestions = [
   {
     question: "¿Qué es la mediación?",
@@ -103,7 +167,10 @@ function Accordion({ items }) {
               openIndex === idx ? "block" : "hidden"
             }`}
           >
-            {item.answer}
+            <span
+              // eslint-disable-next-line react/no-danger
+              dangerouslySetInnerHTML={{ __html: boldify(item.answer) }}
+            />
           </div>
         </div>
       ))}

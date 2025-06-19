@@ -52,6 +52,14 @@ export default function Navbar() {
             >
               Contacto
             </Link>
+            <Link
+              className="inline-block rounded-lg px-2 py-1 text-sm font-medium transition-all duration-200 hover:bg-gray-100"
+              style={{ color: "#1D2D44" }}
+              href="#faq"
+              title="Ir a FAQ"
+            >
+              FAQ
+            </Link>
           </nav>
           {/* Auth buttons */}
         </div>

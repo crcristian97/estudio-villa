@@ -72,7 +72,7 @@ function Accordion({ items }) {
 }
 
 export const FAQ2 = () => (
-  <div className="w-full py-20 lg:py-40">
+  <div className="w-full py-20 lg:py-40" id="faq">
     <div className="container mx-auto">
       <div className="flex flex-col gap-10">
         <div className="flex text-center justify-center items-center gap-4 flex-col">

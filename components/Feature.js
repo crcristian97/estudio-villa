@@ -1,6 +1,8 @@
+"use client";
 
 import Image from "next/image";
 import { CheckCircle } from "lucide-react";
+import { motion } from "framer-motion";
 
 const features = [
   {
@@ -25,12 +27,48 @@ const features = [
   },
 ];
 
+const fadeUp = {
+  hidden: { opacity: 0, y: 40 },
+  visible: (i = 1) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: i * 0.15,
+      duration: 0.7,
+      ease: "easeOut",
+    },
+  }),
+};
+
+const fadeLeft = {
+  hidden: { opacity: 0, x: -60 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.8, ease: "easeOut" },
+  },
+};
+
+const fadeRight = {
+  hidden: { opacity: 0, x: 60 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.8, ease: "easeOut" },
+  },
+};
 
 export const LegalServicesSection = () => (
-  <section className="w-full py-20 bg-white" id="que-hacemos" >
+  <section className="w-full py-20 bg-white" id="que-hacemos">
     <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
       {/* Imagen destacada a la izquierda en desktop, arriba en mobile */}
-      <div className="order-1 lg:order-none flex items-center justify-center">
+      <motion.div
+        className="order-1 lg:order-none flex items-center justify-center"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.4 }}
+        variants={fadeLeft}
+      >
         <div className="w-full max-w-2xl h-[380px] md:h-[520px] bg-[#F0EBD8] rounded-3xl flex items-center justify-center shadow-2xl overflow-hidden relative">
           <Image
             src="https://res.cloudinary.com/dgzi8i2ji/image/upload/derecho-societario-familiar.webp"
@@ -43,27 +81,59 @@ export const LegalServicesSection = () => (
             loading="lazy"
           />
         </div>
-      </div>
+      </motion.div>
       {/* Contenido textual */}
-      <div className="flex flex-col gap-6 max-w-2xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-extrabold text-[#3E5C76] mb-2 leading-tight">
+      <motion.div
+        className="flex flex-col gap-6 max-w-2xl mx-auto"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={fadeRight}
+      >
+        <motion.h2
+          className="text-3xl md:text-4xl font-extrabold text-[#3E5C76] mb-2 leading-tight"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+          viewport={{ once: true }}
+        >
           Derecho societario y familiar para empresas
-        </h2>
-        <p className="text-[#3E5C76] text-lg md:text-xl mb-2">
+        </motion.h2>
+        <motion.p
+          className="text-[#3E5C76] text-lg md:text-xl mb-2"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }}
+          viewport={{ once: true }}
+        >
           Soluciones estratégicas y preventivas para empresas familiares y sociedades. Prevenimos y resolvemos conflictos societarios, familiares y sucesorios, asegurando la continuidad y el crecimiento empresarial.
-        </p>
+        </motion.p>
         <ul className="space-y-4 mb-4">
           {features.map((item, idx) => (
-            <li key={idx} className="flex items-start gap-3">
+            <motion.li
+              key={idx}
+              className="flex items-start gap-3"
+              custom={idx}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }}
+              variants={fadeUp}
+            >
               <CheckCircle className="text-[#B49B5A] min-w-[1.5em] min-h-[1.5em]" size={24} />
               <div>
                 <span className="font-semibold text-[#3E5C76]">{item.title}:</span>{" "}
                 <span className="text-[#3E5C76]">{item.description}</span>
               </div>
-            </li>
+            </motion.li>
           ))}
         </ul>
-        <div className="flex flex-col sm:flex-row gap-6">
+        <motion.div
+          className="flex flex-col sm:flex-row gap-6"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
+          viewport={{ once: true }}
+        >
           <div>
             <h3 className="font-semibold text-[#3E5C76] mb-1">Enfoque interdisciplinario</h3>
             <p className="text-[#3E5C76] text-sm">
@@ -76,8 +146,8 @@ export const LegalServicesSection = () => (
               Garantizamos absoluta reserva y acompañamiento cercano en cada etapa del proceso.
             </p>
           </div>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </div>
   </section>
 );

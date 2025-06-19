@@ -1,60 +1,62 @@
+'use client'
 import Image from "next/image";
-import { Stats } from "./Stats";
-// 4-image grid, visually balanced and responsive
+import { motion } from "framer-motion";
+
+// 4-image grid, visually balanced and responsive, with framer-motion effects
+const imageVariants = {
+  hidden: { opacity: 0, y: 40 },
+  visible: (i) => ({
+    opacity: 1,
+    y: 0,
+    transition: { delay: i * 0.15, duration: 0.7, type: "spring", stiffness: 60 }
+  }),
+};
+
 const AboutImagesGrid = () => (
   <div className="grid grid-cols-2 grid-rows-2 gap-4 md:gap-6 lg:gap-8 h-full">
-    {/* Top left */}
-    <div className="bg-[#F0EBD8] rounded-2xl overflow-hidden relative min-h-[160px] md:min-h-[220px] shadow-lg">
-      <Image
-        src="https://res.cloudinary.com/dgzi8i2ji/image/upload/v1749246869/facultad-de-derecho-buenos-aires.webp"
-        alt="Facultad de Derecho Buenos Aires"
-        title="Facultad de Derecho Buenos Aires"
-        fill
-        className="object-cover"
-        sizes="(max-width: 768px) 100vw, 48vw"
-        quality={90}
-        loading="lazy"
-      />
-    </div>
-    {/* Top right */}
-    <div className="bg-[#F0EBD8] rounded-2xl overflow-hidden relative min-h-[160px] md:min-h-[220px] shadow-lg">
-      <Image
-        src="https://res.cloudinary.com/dgzi8i2ji/image/upload/estudio-juridico-ciudad-buenos-aires.webp"
-        alt="Estudio Jurídico en Ciudad de Buenos Aires"
-        title="Estudio Jurídico en Ciudad de Buenos Aires"
-        fill
-        className="object-cover"
-        sizes="(max-width: 768px) 100vw, 48vw"
-        quality={90}
-        loading="lazy"
-      />
-    </div>
-    {/* Bottom left */}
-    <div className="bg-[#F0EBD8] rounded-2xl overflow-hidden relative min-h-[160px] md:min-h-[220px] shadow-lg">
-      <Image
-        src="https://res.cloudinary.com/dgzi8i2ji/image/upload/v1749392316/derecho-civil-en-buenos-aires.webp"
-        alt="Derecho Civil en Buenos Aires"
-        title="Derecho Civil en Buenos Aires"
-        fill
-        className="object-cover"
-        sizes="(max-width: 768px) 100vw, 48vw"
-        quality={90}
-        loading="lazy"
-      />
-    </div>
-    {/* Bottom right */}
-    <div className="bg-[#F0EBD8] rounded-2xl overflow-hidden relative min-h-[160px] md:min-h-[220px] shadow-lg">
-      <Image
-        src="https://res.cloudinary.com/dgzi8i2ji/image/upload/v1749313341/asesoria-derecho-penal-en-buenos-aires.webp"
-        alt="Asesoría Derecho Penal en Buenos Aires"
-        title="Asesoría Derecho Penal en Buenos Aires"
-        fill
-        className="object-cover"
-        sizes="(max-width: 768px) 100vw, 48vw"
-        quality={90}
-        loading="lazy"
-      />
-    </div>
+    {[
+      {
+        src: "https://res.cloudinary.com/dgzi8i2ji/image/upload/v1749246869/facultad-de-derecho-buenos-aires.webp",
+        alt: "Facultad de Derecho Buenos Aires",
+        title: "Facultad de Derecho Buenos Aires",
+      },
+      {
+        src: "https://res.cloudinary.com/dgzi8i2ji/image/upload/estudio-juridico-ciudad-buenos-aires.webp",
+        alt: "Estudio Jurídico en Ciudad de Buenos Aires",
+        title: "Estudio Jurídico en Ciudad de Buenos Aires",
+      },
+      {
+        src: "https://res.cloudinary.com/dgzi8i2ji/image/upload/v1749392316/derecho-civil-en-buenos-aires.webp",
+        alt: "Derecho Civil en Buenos Aires",
+        title: "Derecho Civil en Buenos Aires",
+      },
+      {
+        src: "https://res.cloudinary.com/dgzi8i2ji/image/upload/v1749313341/asesoria-derecho-penal-en-buenos-aires.webp",
+        alt: "Asesoría Derecho Penal en Buenos Aires",
+        title: "Asesoría Derecho Penal en Buenos Aires",
+      },
+    ].map((img, i) => (
+      <motion.div
+        key={img.src}
+        className="bg-[#F0EBD8] rounded-2xl overflow-hidden relative min-h-[160px] md:min-h-[220px] shadow-lg"
+        custom={i}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={imageVariants}
+      >
+        <Image
+          src={img.src}
+          alt={img.alt}
+          title={img.title}
+          fill
+          className="object-cover"
+          sizes="(max-width: 768px) 100vw, 48vw"
+          quality={90}
+          loading="lazy"
+        />
+      </motion.div>
+    ))}
   </div>
 );
 
@@ -62,7 +64,13 @@ export const AboutUs = () => (
   <section className="w-full py-20 lg:py-36 bg-[#F9FAFB] " id="sobre-la-firma">
     <div className="container mx-auto">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-        <div className="flex flex-col gap-6">
+        <motion.div
+          className="flex flex-col gap-6"
+          initial={{ opacity: 0, x: -40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, type: "spring", stiffness: 60 }}
+          viewport={{ once: true, amount: 0.3 }}
+        >
           <span className="uppercase text-xs font-bold tracking-widest text-[#1D2D44] mb-2">
             Sobre la firma
           </span>
@@ -101,7 +109,7 @@ export const AboutUs = () => (
           <p className="text-base md:text-lg text-[#1D2D44] mt-6">
             Descubrí cómo podemos ayudarte a ordenar el presente y asegurar el futuro de tu legado.
           </p>
-        </div>
+        </motion.div>
         <AboutImagesGrid />
       </div>
     </div>

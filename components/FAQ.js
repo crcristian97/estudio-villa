@@ -1,6 +1,8 @@
 "use client"
 import { PhoneCall } from "lucide-react";
 import { useState } from "react";
+import { motion } from "framer-motion";
+import { useInView } from "framer-motion";
 
 // Utilidad para poner en negrita ciertas palabras/frases clave en las respuestas
 function boldify(text) {
@@ -178,30 +180,45 @@ function Accordion({ items }) {
   );
 }
 
-export const FAQ2 = () => (
-  <div className="w-full py-20 lg:py-40" id="faq">
-    <div className="container mx-auto">
-      <div className="flex flex-col gap-10">
-        <div className="flex text-center justify-center items-center gap-4 flex-col">
-          <div className="flex gap-2 flex-col">
-            <h4 className="text-3xl md:text-5xl tracking-tighter max-w-xl text-center font-regular text-[#1D2D44]">
-              Preguntas frecuentes
-            </h4>
-            <p className="text-lg leading-relaxed tracking-tight text-[#3E5C76] max-w-xl text-center">
-              Respondemos las dudas más comunes sobre nuestros servicios legales. Si tenés otra consulta, no dudes en contactarnos.
-            </p>
-          </div>
-          <div>
-            <button className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-[#F0EBD8] text-[#3E5C76] hover:bg-[#3E5C76] hover:text-white transition-colors font-semibold cursor-pointer">
-              ¿Tenés preguntas? Escribinos <PhoneCall className="w-4 h-4" />
-            </button>
-          </div>
-        </div>
+// FAQ2 with Framer Motion animation when in viewport
+import { useRef } from "react";
 
-        <div className="max-w-3xl w-full mx-auto">
-          <Accordion items={faqQuestions} />
+export const FAQ2 = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 60 }}
+      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 60 }}
+      transition={{ duration: 0.7, ease: "easeOut" }}
+      className="w-full py-20 lg:py-40"
+      id="faq"
+    >
+      <div className="container mx-auto">
+        <div className="flex flex-col gap-10">
+          <div className="flex text-center justify-center items-center gap-4 flex-col">
+            <div className="flex gap-2 flex-col">
+              <h4 className="text-3xl md:text-5xl tracking-tighter max-w-xl text-center font-regular text-[#1D2D44]">
+                Preguntas frecuentes
+              </h4>
+              <p className="text-lg leading-relaxed tracking-tight text-[#3E5C76] max-w-xl text-center">
+                Respondemos las dudas más comunes sobre nuestros servicios legales. Si tenés otra consulta, no dudes en contactarnos.
+              </p>
+            </div>
+            <div>
+              <button className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-[#F0EBD8] text-[#3E5C76] hover:bg-[#3E5C76] hover:text-white transition-colors font-semibold cursor-pointer">
+                ¿Tenés preguntas? Escribinos <PhoneCall className="w-4 h-4" />
+              </button>
+            </div>
+          </div>
+
+          <div className="max-w-3xl w-full mx-auto">
+            <Accordion items={faqQuestions} />
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-);
+    </motion.div>
+  );
+};

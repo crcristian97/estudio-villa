@@ -6,6 +6,12 @@ import {
   Mail,
   Phone,
 } from "lucide-react";
+import { motion } from "framer-motion";
+
+const fadeInRight = {
+  hidden: { opacity: 0, x: 80 },
+  visible: { opacity: 1, x: 0, transition: { type: "spring", stiffness: 60, damping: 18 } },
+};
 
 export const Contact = () => {
   // Form state
@@ -61,7 +67,6 @@ export const Contact = () => {
     }));
   };
 
-
   return (
     <section className="mb-32" id="contacto">
       <div
@@ -83,7 +88,13 @@ export const Contact = () => {
         <div className="block rounded-lg bg-[hsla(0,0%,100%,0.8)] px-6 py-12 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)]  md:py-16 md:px-12 -mt-[100px] backdrop-blur-[30px] border border-primary">
           <div className="flex flex-wrap">
             {/* Formulario */}
-            <div className="mb-12 w-full shrink-0 grow-0 basis-auto md:px-3 lg:mb-0 lg:w-5/12 lg:px-6">
+            <motion.div
+              className="mb-12 w-full shrink-0 grow-0 basis-auto md:px-3 lg:mb-0 lg:w-5/12 lg:px-6"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
+              variants={fadeInRight}
+            >
               <form onSubmit={handleSubmit} noValidate>
                 <div className="relative mb-6">
                   <input
@@ -174,7 +185,7 @@ export const Contact = () => {
                   </div>
                 )}
               </form>
-            </div>
+            </motion.div>
             {/* Info de contacto */}
             <div className="w-full shrink-0 grow-0 basis-auto lg:w-7/12">
               <div className="flex flex-wrap">

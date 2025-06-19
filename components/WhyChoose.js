@@ -1,4 +1,6 @@
+"use client";
 import { CheckCircle } from "lucide-react";
+import { motion } from "framer-motion";
 
 const features = [
   {
@@ -39,7 +41,13 @@ export default function WhyChoose() {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto items-start">
           {/* Left column: Text */}
-          <div className="h-full flex">
+          <motion.div
+            className="h-full flex"
+            initial={{ opacity: 0, x: -60 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.6 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+          >
             <div className="w-full">
               <h2 className="text-3xl md:text-4xl font-semibold text-[#1D2D44] mb-4 tracking-tight">
                 ¿Por qué elegir Estudio Villa?
@@ -48,7 +56,7 @@ export default function WhyChoose() {
                 El respaldo en el que podés confiar
               </p>
             </div>
-          </div>
+          </motion.div>
           {/* Right column: Features */}
           <div>
             <div className="grid grid-cols-1 gap-6">

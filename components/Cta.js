@@ -1,4 +1,5 @@
-import { MoveRight } from "lucide-react";
+"use client";
+import { motion } from "framer-motion";
 
 export const CTA2 = () => (
   <div
@@ -14,16 +15,34 @@ export const CTA2 = () => (
   >
     <div className="absolute inset-0 bg-[#F0EBD8]/80 pointer-events-none" aria-hidden="true"></div>
     <div className="container mx-auto relative z-10">
-      <div className="flex flex-col text-center py-14 gap-4 items-center">
-        <div className="flex flex-col gap-2">
+      <motion.div
+        className="flex flex-col text-center py-14 gap-4 items-center"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        viewport={{ once: true }}
+      >
+        <motion.div
+          className="flex flex-col gap-2"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
+          viewport={{ once: true }}
+        >
           <h3 className="text-3xl md:text-5xl tracking-tighter max-w-xl font-regular text-[#1D2D44]">
             Explorá artículos y casos reales
           </h3>
           <p className="text-lg leading-relaxed tracking-tight text-[#3E5C76] max-w-xl">
             Sobre resolución de conflictos, herencias empresarias y planificación sucesoria.
           </p>
-        </div>
-        <div className="flex flex-row gap-4 mt-4">
+        </motion.div>
+        <motion.div
+          className="flex flex-row gap-4 mt-4"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+          viewport={{ once: true }}
+        >
           <a
             href="https://www.linkedin.com/"
             title="Ir a LinkedIn"
@@ -34,8 +53,8 @@ export const CTA2 = () => (
           >
             Ir a LinkedIn
           </a>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </div>
   </div>
 );

@@ -1,8 +1,53 @@
+'use client';
 import Link from "next/link";
+import { useState, useEffect } from "react";
 
 export default function Navbar() {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isScrollingUp, setIsScrollingUp] = useState(false);
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const [isVisible, setIsVisible] = useState(true);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      
+      // Detectar si estamos haciendo scroll hacia arriba
+      if (currentScrollY < lastScrollY && currentScrollY > 100) {
+        setIsScrollingUp(true);
+        setIsVisible(true);
+      } else if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        setIsScrollingUp(false);
+        setIsVisible(false);
+      }
+      
+      // Detectar si hemos scrolleado más de 50px
+      if (currentScrollY > 50) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+        setIsVisible(true);
+      }
+      
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [lastScrollY]);
+
   return (
-    <header className="fixed inset-x-0 top-0 z-30 mx-auto w-full max-w-screen-md border border-gray-100 bg-white/80 py-3 shadow backdrop-blur-lg md:top-6 md:rounded-3xl lg:max-w-screen-lg">
+    <header 
+      className={`fixed inset-x-0 top-0 z-30 mx-auto w-full max-w-screen-md border border-gray-100 py-3 shadow backdrop-blur-lg transition-all duration-300 md:top-6 md:rounded-3xl lg:max-w-screen-lg ${
+        isScrolled 
+          ? 'bg-white/95 shadow-lg' 
+          : 'bg-white/80'
+      } ${
+        isVisible
+          ? 'translate-y-0' 
+          : '-translate-y-full'
+      }`}
+    >
       <div className="px-4">
         <div className="flex items-center justify-between">
           {/* Logo / Brand */}

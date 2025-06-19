@@ -6,27 +6,67 @@ const faqQuestions = [
   {
     question: "¿Qué es la mediación?",
     answer:
-      "La mediación es un proceso extrajudicial donde un tercero imparcial ayuda a las partes a llegar a un acuerdo. Es una alternativa eficiente y confidencial para resolver conflictos. Promueve la comunicación y puede ser menos costosa que un litigio.",
+      "Es una herramienta legal para resolver conflictos sin juicio, con intervención de un tercero imparcial. Promueve acuerdos más rápidos, confidenciales y sostenibles.",
   },
   {
     question: "¿Cómo se inicia un litigio?",
     answer:
-      "Para iniciar un litigio, se debe presentar una demanda ante el tribunal correspondiente. Es fundamental contar con asesoría legal para garantizar que se sigan todos los procedimientos adecuados. Nuestro estudio está aquí para guiarlo en cada paso del proceso.",
-  },
-  {
-    question: "¿Qué es el servicio estrella?",
-    answer:
-      "Nuestro servicio estrella, la Resolución Estratégica de Conflictos Complejos, ofrece soluciones integrales para conflictos difíciles. Combinamos un enfoque interdisciplinario con la confidencialidad y eficiencia. Esto nos permite abordar cada caso de manera única y efectiva.",
-  },
-  {
-    question: "¿Cuánto tiempo toma un proceso legal?",
-    answer:
-      "La duración de un proceso legal puede variar significativamente según la complejidad del caso. Algunos litigios pueden resolverse en meses, mientras que otros pueden tardar años. Nuestro equipo se compromete a mantenerlo informado sobre cada etapa del proceso.",
+      "Con una demanda judicial. Pero antes evaluamos si existen vías alternativas más eficaces. Te guiamos en cada paso.",
   },
   {
     question: "¿Ofrecen consultas iniciales?",
     answer:
-      "Sí, ofrecemos consultas iniciales para evaluar su situación legal. Durante esta consulta, discutiremos sus opciones y cómo podemos ayudarle. No dude en contactarnos para programar su cita.",
+      "Sí. La primera consulta nos permite entender tu situación y proponerte un plan de acción sin compromiso.",
+  },
+  {
+    question: "¿Qué tipo de conflictos resuelven?",
+    answer:
+      "Especialmente aquellos donde se cruzan intereses patrimoniales, familiares y empresariales. Somos expertos en resolver lo que parece no tener solución.",
+  },
+  {
+    question: "¿Cuánto dura un proceso legal?",
+    answer:
+      "Depende del caso. Algunos se resuelven en semanas con acuerdos, otros pueden durar años si van a juicio. Siempre te mantenemos informado.",
+  },
+  {
+    question: "¿Qué pasa si los herederos no se ponen de acuerdo?",
+    answer:
+      "Cuando hay desacuerdos entre herederos, especialmente si hay bienes complejos o empresas de por medio, es fundamental contar con asesoramiento jurídico. Podemos facilitar acuerdos a través de mediación o, si es necesario, representar en juicio para resguardar tus derechos.",
+  },
+  {
+    question: "¿Puedo reclamar una herencia si sospecho que me ocultaron bienes?",
+    answer:
+      "Sí. Existen herramientas legales como la colación hereditaria o la reducción de donaciones inoficiosas para equilibrar lo recibido por todos los herederos. Investigamos operaciones sospechosas y te ayudamos a defender tu porción legítima.",
+  },
+  {
+    question: "¿Qué pasa si hay una empresa dentro de la herencia?",
+    answer:
+      "Cuando el patrimonio hereditario incluye participaciones en sociedades, es clave analizar el vínculo entre los herederos y los socios. Actuamos para evitar bloqueos societarios y conflictos entre familiares que también son socios.",
+  },
+  {
+    question: "¿Se puede evitar llegar a juicio en una sucesión complicada?",
+    answer:
+      "Sí. Diseñamos acuerdos anticipados, pactos sucesorios y protocolos familiares que permiten resolver de forma extrajudicial. Nuestro enfoque busca preservar los vínculos personales sin resignar tus derechos.",
+  },
+  {
+    question: "¿Qué es la planificación sucesoria y por qué debería hacerla?",
+    answer:
+      "Es un proceso legal que permite organizar el destino de tu patrimonio antes del fallecimiento, evitando conflictos futuros. Es especialmente útil si tenés bienes valiosos, empresas familiares o hijos de diferentes vínculos. Es posible establecer reglas claras de administración, reparto o usufructo.",
+  },
+  {
+    question: "¿Qué situaciones complejas pueden surgir en una sucesión?",
+    answer:
+      "Ocultamiento o simulación de bienes.\nDonaciones encubiertas que perjudican a otros herederos.\nEmpresas familiares bloqueadas por desacuerdos.\nFalta de protocolos entre herederos que también son socios.\nDisputas por el uso o la partición de bienes indivisos.",
+  },
+  {
+    question: "¿Cómo se resuelve una sucesión con conflictos?",
+    answer:
+      "Desde el estudio, analizamos el caso, diseñamos una estrategia jurídica y buscamos acuerdos duraderos. Si no es posible negociar, representamos tus intereses ante la justicia para lograr una solución justa.",
+  },
+  {
+    question: "¿Cuál es el rol del abogado en estos casos?",
+    answer:
+      "El abogado no solo litiga: facilita acuerdos, protege tus derechos y busca soluciones que contemplen tanto lo jurídico como lo humano. En casos de familias empresarias, actuamos con sensibilidad, visión estratégica y conocimiento interdisciplinario.",
   },
 ];
 

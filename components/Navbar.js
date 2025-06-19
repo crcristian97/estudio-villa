@@ -68,7 +68,7 @@ export default function Navbar() {
           {/* Main navigation */}
           <nav className="hidden md:flex md:items-center md:justify-center md:gap-5">
             <Link
-              className="inline-block rounded-lg px-2 py-1 text-sm font-medium transition-all duration-200 hover:bg-gray-200"
+              className="inline-block rounded-lg px-2 py-1 text-sm font-medium transition-all duration-200 hover:bg-gray-400 hover:text-white   "
               style={{ color: "#1D2D44" }}
               href="#sobre-la-firma"
               title="Ir a Sobre la firma"
@@ -76,7 +76,7 @@ export default function Navbar() {
               Sobre la firma
             </Link>
             <Link
-              className="inline-block rounded-lg px-2 py-1 text-sm font-medium transition-all duration-200 hover:bg-gray-200"
+              className="inline-block rounded-lg px-2 py-1 text-sm font-medium transition-all duration-200 hover:bg-gray-400 hover:text-white"
               style={{ color: "#1D2D44" }}
               href="#que-hacemos"
               title="Ir a Qué hacemos"
@@ -84,7 +84,7 @@ export default function Navbar() {
               Qué hacemos
             </Link>
             <Link
-              className="inline-block rounded-lg px-2 py-1 text-sm font-medium transition-all duration-200 hover:bg-gray-200"
+              className="inline-block rounded-lg px-2 py-1 text-sm font-medium transition-all duration-200 hover:bg-gray-400 hover:text-white"
               style={{ color: "#1D2D44" }}
               href="#como-trabajamos"
               title="Ir a Cómo trabajamos"
@@ -92,7 +92,7 @@ export default function Navbar() {
               Cómo trabajamos
             </Link>
             <Link
-              className="inline-block rounded-lg px-2 py-1 text-sm font-medium transition-all duration-200 hover:bg-gray-200"
+              className="inline-block rounded-lg px-2 py-1 text-sm font-medium transition-all duration-200 hover:bg-gray-400 hover:text-white"
               style={{ color: "#1D2D44" }}
               href="#noticias"
               title="Ir a Noticias"
@@ -100,7 +100,7 @@ export default function Navbar() {
               Noticias
             </Link>
             <Link
-              className="inline-block rounded-lg px-2 py-1 text-sm font-medium transition-all duration-200 hover:bg-gray-200"
+              className="inline-block rounded-lg px-2 py-1 text-sm font-medium transition-all duration-200 hover:bg-gray-400 hover:text-white"
               style={{ color: "#1D2D44" }}
               href="#contacto"
               title="Ir a Contacto"
@@ -108,7 +108,7 @@ export default function Navbar() {
               Contacto
             </Link>
             <Link
-              className="inline-block rounded-lg px-2 py-1 text-sm font-medium transition-all duration-200 hover:bg-gray-200"
+              className="inline-block rounded-lg px-2 py-1 text-sm font-medium transition-all duration-200 hover:bg-gray-400 hover:text-white"
               style={{ color: "#1D2D44" }}
               href="#faq"
               title="Ir a FAQ"
@@ -122,7 +122,7 @@ export default function Navbar() {
       {/* Mobile nav */}
       <nav className="flex md:hidden mt-3 px-4 gap-4 justify-center">
         <Link
-          className="inline-block rounded-lg px-2 py-1 text-sm font-medium transition-all duration-200 hover:bg-gray-200"
+          className="inline-block rounded-lg px-2 py-1 text-sm font-medium transition-all duration-200 hover:bg-gray-400 hover:text-white"
           style={{ color: "#1D2D44" }}
           href="#sobre-la-firma"
           title="Ir a Sobre la firma"
@@ -130,7 +130,7 @@ export default function Navbar() {
           Sobre la firma
         </Link>
         <Link
-          className="inline-block rounded-lg px-2 py-1 text-sm font-medium transition-all duration-200 hover:bg-gray-200"
+          className="inline-block rounded-lg px-2 py-1 text-sm font-medium transition-all duration-200 hover:bg-gray-400 hover:text-white"
           style={{ color: "#1D2D44" }}
           href="#que-hacemos"
           title="Ir a Qué hacemos"
@@ -138,7 +138,7 @@ export default function Navbar() {
           Qué hacemos
         </Link>
         <Link
-          className="inline-block rounded-lg px-2 py-1 text-sm font-medium transition-all duration-200 hover:bg-gray-200"
+          className="inline-block rounded-lg px-2 py-1 text-sm font-medium transition-all duration-200 hover:bg-gray-400 hover:text-white"
           style={{ color: "#1D2D44" }}
           href="#como-trabajamos"
           title="Ir a Cómo trabajamos"
@@ -146,7 +146,7 @@ export default function Navbar() {
           Cómo trabajamos
         </Link>
         <Link
-          className="inline-block rounded-lg px-2 py-1 text-sm font-medium transition-all duration-200 hover:bg-gray-100"
+          className="inline-block rounded-lg px-2 py-1 text-sm font-medium transition-all duration-200 hover:bg-gray-400 hover:text-white"
           style={{ color: "#1D2D44" }}
           href="#noticias"
           title="Ir a Noticias"
@@ -154,7 +154,7 @@ export default function Navbar() {
           Noticias
         </Link>
         <Link
-          className="inline-block rounded-lg px-2 py-1 text-sm font-medium transition-all duration-200 hover:bg-gray-200"
+          className="inline-block rounded-lg px-2 py-1 text-sm font-medium transition-all duration-200 hover:bg-gray-400 hover:text-white"
           style={{ color: "#1D2D44" }}
           href="#contacto"
           title="Ir a Contacto"

@@ -1,6 +1,8 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "../globals.css";
 import WhatsAppButton from "../../components/WhatsAppButton";
+import { MultiJsonLd } from "../../components/JsonLd";
+import { generateFullSchema } from "../schema";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -45,9 +47,15 @@ export const metadata = {
    },
  };
 
-export default function Layout({ children, params }) {
+export default async function Layout({ children, params }) {
+  // Await params if it's a Promise (Next.js dynamic route fix)
+  const resolvedParams = typeof params?.then === "function" ? await params : params;
   return (
-    <html lang={params.lang}>
+    <html lang={resolvedParams.lang}>
+      <head>
+        {/* Schema JSON-LD para SEO */}
+        <MultiJsonLd schemas={generateFullSchema()} />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

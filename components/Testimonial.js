@@ -6,17 +6,14 @@ const testimonials = [
   {
     text: `"He utilizado estos servicios durante años y siempre superan mis expectativas. ¡El equipo de soporte es fantástico!"`,
     name: "Pepe Madrid",
-    title: "CEO de Algo S.A."
   },
   {
     text: `"Las soluciones financieras que ofrecen son de primer nivel. He visto un crecimiento significativo en mis inversiones desde que empecé a usar su plataforma."`,
     name: "Michael Andreuzza",
-    title: "CEO de Algo S.A."
   },
   {
     text: `"Su atención al cliente es inigualable. Realmente hacen un esfuerzo extra para asegurar la satisfacción del cliente."`,
     name: "Fernando Pio",
-    title: "CEO de Algo S.A."
   }
 ];
 
@@ -173,9 +170,7 @@ export const Testimonial = () => {
                                 <p className="text-lg sm:text-xl font-medium" style={{ color: iColor }}>
                                   {t.name}
                                 </p>
-                                <p className="text-base font-medium text-gray-500">
-                                  {t.title}
-                                </p>
+                                
                               </div>
                             </div>
                           </div>

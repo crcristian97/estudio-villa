@@ -214,38 +214,6 @@ export const Contact = () => {
                         </div>
                       </div>
                     </div>
-                    {/* Email y Teléfono */}
-                    <div className="mb-12 w-full shrink-0 grow-0 basis-auto md:mb-0 md:w-6/12 md:px-3 lg:mb-12 lg:w-full lg:px-6 xl:w-6/12">
-                      <div className="flex items-start">
-                        <div className="shrink-0">
-                          <div className="inline-block rounded-md bg-[#1C2D44] p-4">
-                            {/* Icono email */}
-                            <Mail className="w-6 h-6" color="#F0EBD8" />
-                          </div>
-                        </div>
-                        <div className="ml-6 grow">
-                          <p className="mb-2 font-bold" style={{ color: "#3D5C76" }}>Email</p>
-                          <p style={{ color: "#3D5C76" }}>
-                            estudio@robertovillayasociados.com.ar
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="w-full shrink-0 grow-0 basis-auto md:w-6/12 md:px-3 lg:w-full lg:px-6 xl:mb-12 xl:w-6/12">
-                      <div className="flex items-start">
-                        <div className="shrink-0">
-                          <div className="inline-block rounded-md bg-[#1C2D44] p-4">
-                            {/* Icono teléfono */}
-                            <Phone className="w-6 h-6" color="#F0EBD8" />
-                          </div>
-                        </div>
-                        <div className="ml-6 grow">
-                          <p className="mb-2 font-bold" style={{ color: "#3D5C76" }}>Teléfono</p>
-                          <p style={{ color: "#3D5C76" }}>+54 11 2649 3333</p>
-                        </div>
-                      </div>
-                    </div>
-                    {/* Fin info */}
                   </div>
                 </div>
               </div>

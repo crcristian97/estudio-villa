@@ -1,0 +1,22 @@
+# Robots.txt para Estudio Villa & Asociados
+# Permite a los motores de búsqueda indexar el sitio
+
+User-agent: *
+Allow: /
+
+# Bloquear archivos y directorios específicos
+Disallow: /_next/
+Disallow: /api/
+Disallow: /admin/
+Disallow: /private/
+
+# Permitir CSS, JS e imágenes
+Allow: /_next/static/css/
+Allow: /_next/static/js/
+Allow: /_next/static/media/
+
+# Sitemap
+Sitemap: https://robertovillayasociados.com.ar/sitemap.xml
+
+# Crawl-delay (opcional, para ser amigable con el servidor)
+Crawl-delay: 1 

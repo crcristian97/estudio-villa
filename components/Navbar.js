@@ -9,6 +9,7 @@ export default function Navbar() {
   const [isScrollingUp, setIsScrollingUp] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isVisible, setIsVisible] = useState(true);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,6 +38,23 @@ export default function Navbar() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, [lastScrollY]);
+
+  // Close mobile menu when clicking on a link
+  const handleMobileLinkClick = () => {
+    setIsMobileMenuOpen(false);
+  };
+
+  // Close mobile menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (isMobileMenuOpen && !event.target.closest('.mobile-menu-container')) {
+        setIsMobileMenuOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [isMobileMenuOpen]);
 
   return (
     <header 
@@ -116,52 +134,100 @@ export default function Navbar() {
               FAQ
             </Link>
           </nav>
-          {/* Auth buttons */}
+          
+          {/* Hamburger Menu Button */}
+          <button
+            className="md:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1.5 focus:outline-none"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Toggle mobile menu"
+            aria-expanded={isMobileMenuOpen}
+          >
+            <span 
+              className={`block w-6 h-0.5 bg-gray-700 transition-all duration-300 ${
+                isMobileMenuOpen ? 'rotate-45 translate-y-2' : ''
+              }`}
+            ></span>
+            <span 
+              className={`block w-6 h-0.5 bg-gray-700 transition-all duration-300 ${
+                isMobileMenuOpen ? 'opacity-0' : ''
+              }`}
+            ></span>
+            <span 
+              className={`block w-6 h-0.5 bg-gray-700 transition-all duration-300 ${
+                isMobileMenuOpen ? '-rotate-45 -translate-y-2' : ''
+              }`}
+            ></span>
+          </button>
         </div>
       </div>
-      {/* Mobile nav */}
-      <nav className="flex md:hidden mt-3 px-4 gap-4 justify-center">
-        <Link
-          className="inline-block rounded-lg px-2 py-1 text-sm font-medium transition-all duration-200 hover:bg-gray-400 hover:text-white"
-          style={{ color: "#1D2D44" }}
-          href="#sobre-la-firma"
-          title="Ir a Sobre la firma"
+      
+      {/* Mobile Navigation Menu */}
+      <div className="mobile-menu-container">
+        <nav 
+          className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
+            isMobileMenuOpen 
+              ? 'max-h-96 opacity-100' 
+              : 'max-h-0 opacity-0'
+          }`}
         >
-          Sobre la firma
-        </Link>
-        <Link
-          className="inline-block rounded-lg px-2 py-1 text-sm font-medium transition-all duration-200 hover:bg-gray-400 hover:text-white"
-          style={{ color: "#1D2D44" }}
-          href="#que-hacemos"
-          title="Ir a Qué hacemos"
-        >
-          Qué hacemos
-        </Link>
-        <Link
-          className="inline-block rounded-lg px-2 py-1 text-sm font-medium transition-all duration-200 hover:bg-gray-400 hover:text-white"
-          style={{ color: "#1D2D44" }}
-          href="#como-trabajamos"
-          title="Ir a Cómo trabajamos"
-        >
-          Cómo trabajamos
-        </Link>
-        <Link
-          className="inline-block rounded-lg px-2 py-1 text-sm font-medium transition-all duration-200 hover:bg-gray-400 hover:text-white"
-          style={{ color: "#1D2D44" }}
-          href="#noticias"
-          title="Ir a Noticias"
-        >
-          Noticias
-        </Link>
-        <Link
-          className="inline-block rounded-lg px-2 py-1 text-sm font-medium transition-all duration-200 hover:bg-gray-400 hover:text-white"
-          style={{ color: "#1D2D44" }}
-          href="#contacto"
-          title="Ir a Contacto"
-        >
-          Contacto
-        </Link>
-      </nav>
+          <div className="px-4 pb-4 space-y-2">
+            <Link
+              className="block rounded-lg px-3 py-2 text-sm font-medium transition-all duration-200 hover:bg-gray-100 hover:text-gray-900"
+              style={{ color: "#1D2D44" }}
+              href="#sobre-la-firma"
+              title="Ir a Sobre la firma"
+              onClick={handleMobileLinkClick}
+            >
+              Sobre la firma
+            </Link>
+            <Link
+              className="block rounded-lg px-3 py-2 text-sm font-medium transition-all duration-200 hover:bg-gray-100 hover:text-gray-900"
+              style={{ color: "#1D2D44" }}
+              href="#que-hacemos"
+              title="Ir a Qué hacemos"
+              onClick={handleMobileLinkClick}
+            >
+              Qué hacemos
+            </Link>
+            <Link
+              className="block rounded-lg px-3 py-2 text-sm font-medium transition-all duration-200 hover:bg-gray-100 hover:text-gray-900"
+              style={{ color: "#1D2D44" }}
+              href="#como-trabajamos"
+              title="Ir a Cómo trabajamos"
+              onClick={handleMobileLinkClick}
+            >
+              Cómo trabajamos
+            </Link>
+            <Link
+              className="block rounded-lg px-3 py-2 text-sm font-medium transition-all duration-200 hover:bg-gray-100 hover:text-gray-900"
+              style={{ color: "#1D2D44" }}
+              href="#noticias"
+              title="Ir a Noticias"
+              onClick={handleMobileLinkClick}
+            >
+              Noticias
+            </Link>
+            <Link
+              className="block rounded-lg px-3 py-2 text-sm font-medium transition-all duration-200 hover:bg-gray-100 hover:text-gray-900"
+              style={{ color: "#1D2D44" }}
+              href="#contacto"
+              title="Ir a Contacto"
+              onClick={handleMobileLinkClick}
+            >
+              Contacto
+            </Link>
+            <Link
+              className="block rounded-lg px-3 py-2 text-sm font-medium transition-all duration-200 hover:bg-gray-100 hover:text-gray-900"
+              style={{ color: "#1D2D44" }}
+              href="#faq"
+              title="Ir a FAQ"
+              onClick={handleMobileLinkClick}
+            >
+              FAQ
+            </Link>
+          </div>
+        </nav>
+      </div>
     </header>
   );
 }

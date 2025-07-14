@@ -17,7 +17,7 @@ function boldify(text) {
     "asesoramiento jurídico",
     "colación hereditaria",
     "reducción de donaciones inoficiosas",
-    "empresa",
+    "empresariales",
     "sociedades",
     "protocolos familiares",
     "planificación sucesoria",

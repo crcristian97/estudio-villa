@@ -95,13 +95,13 @@ export const AboutUs = () => (
           <div className="flex flex-col gap-2">
             <span className="font-semibold text-[#1D2D44]">Nuestro compromiso:</span>
             <div className="flex flex-wrap gap-3">
-              <span className="inline-block bg-[#1D2D44] text-white px-4 py-1 rounded-full text-sm font-medium shadow cursor-pointer transition-colors duration-200 hover:bg-[#748CAB]">
+              <span className="inline-block bg-[#1D2D44] text-white px-4 py-1 rounded-full text-sm font-medium shadow transition-colors duration-200 hover:bg-[#748CAB]">
                 Claridad jurídica
               </span>
-              <span className="inline-block bg-[#1D2D44] text-white px-4 py-1 rounded-full text-sm font-medium shadow cursor-pointer transition-colors duration-200 hover:bg-[#748CAB]">
+              <span className="inline-block bg-[#1D2D44] text-white px-4 py-1 rounded-full text-sm font-medium shadow transition-colors duration-200 hover:bg-[#748CAB]">
                 Continuidad empresarial
               </span>
-              <span className="inline-block bg-[#1D2D44] text-white px-4 py-1 rounded-full text-sm font-medium shadow cursor-pointer transition-colors duration-200 hover:bg-[#748CAB]">
+              <span className="inline-block bg-[#1D2D44] text-white px-4 py-1 rounded-full text-sm font-medium shadow transition-colors duration-200 hover:bg-[#748CAB]">
                 Paz familiar
               </span>
             </div>

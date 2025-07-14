@@ -52,7 +52,7 @@ export const Contact = () => {
             reply_to: form.email,
             to_email: "crcristian97.cc@gmail.com",
           },
-          "tMjqp3HL6evYa8dwC"
+          process.env.NEXT_PUBLIC_EMAILJS_KEY
         );
         setSubmitted(true);
         setForm({ name: "", email: "", message: "", sendCopy: false });

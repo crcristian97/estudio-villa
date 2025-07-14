@@ -43,8 +43,8 @@ export const Contact = () => {
     if (Object.keys(validation).length === 0) {
       try {
         await emailjs.send(
-          "service_wp0kdup",
-          "template_f3q6zpa",
+          "service_h5oymfh",
+          "template_3hujj07",
           {
             name: form.name,
             email: form.email,

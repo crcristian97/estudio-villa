@@ -44,7 +44,7 @@ export const CTA2 = () => (
           viewport={{ once: true }}
         >
           <a
-            href="https://www.linkedin.com/"
+            href="https://www.linkedin.com/company/villa-y-asociados-estudio-juridico/"
             title="Ir a LinkedIn"
             aria-label="Ir a LinkedIn"
             target="_blank"

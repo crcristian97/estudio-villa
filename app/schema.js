@@ -128,14 +128,21 @@ export const breadcrumbSchema = {
     }
   ]
 };
-
 export const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "¿Qué es la mediación y para qué sirve?",
+      "name": "¿Trabajan únicamente en la Ciudad Autónoma de Buenos Aires?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Actuamos tanto en CABA como en diversas jurisdicciones del interior del país."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué es la mediación?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Es una herramienta legal para resolver conflictos sin juicio, con intervención de un tercero imparcial. Promueve acuerdos más rápidos, confidenciales y sostenibles."
@@ -155,6 +162,14 @@ export const faqSchema = {
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Sí. La primera consulta nos permite entender tu situación y proponerte un plan de acción sin compromiso."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Puedo consultar sin tener un juicio iniciado?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. Ofrecemos orientación preventiva para resolver conflictos antes de que escalen a instancias judiciales."
       }
     },
     {
@@ -203,6 +218,22 @@ export const faqSchema = {
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Sí. Diseñamos acuerdos anticipados, pactos sucesorios y protocolos familiares que permiten resolver de forma extrajudicial. Nuestro enfoque busca preservar los vínculos personales sin resignar tus derechos."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué implica una causa en el fuero penal económico o tributario?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Este tipo de causas suelen estar vinculadas a presuntos delitos financieros, cambiarios, evasión impositiva o infracciones ante organismos como la AFIP o el Banco Central. Brindamos asesoramiento integral, estrategia de defensa y representación en todas las instancias del proceso."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿También asesoran a empresas?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. Contamos con amplia experiencia en el asesoramiento y defensa de empresas en temas penales y tributarios, incluyendo sumarios ante el BCRA y la AFIP, análisis de riesgos penales y litigios complejos."
       }
     },
     {

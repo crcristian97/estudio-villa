@@ -1,13 +1,12 @@
 "use client"
 import { PhoneCall } from "lucide-react";
-import { useState } from "react";
-import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
+import { useState, useRef } from "react";
+import { motion, useInView } from "framer-motion";
 
 // Utilidad para poner en negrita ciertas palabras/frases clave en las respuestas
 function boldify(text) {
-  // Lista de frases/palabras a poner en negrita (puedes ajustar según necesidad)
   const boldWords = [
+    "CABA",
     "mediación",
     "demanda judicial",
     "consulta",
@@ -47,28 +46,28 @@ function boldify(text) {
     "usufructo"
   ];
 
-  // Ordenar por longitud descendente para evitar solapamientos
   boldWords.sort((a, b) => b.length - a.length);
 
-  // Reemplazar cada palabra/frase por su versión en <strong>
   let result = text;
   boldWords.forEach(word => {
-    // Escapar caracteres especiales para RegExp
     const escaped = word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-    // Solo poner en negrita si no está ya dentro de una etiqueta <strong>
     result = result.replace(
       new RegExp(`(?<!<strong[^>]*?>)(${escaped})(?![^<]*?</strong>)`, "gi"),
       '<strong class="font-semibold text-[#1D2D44]">$1</strong>'
     );
   });
 
-  // Manejar saltos de línea como <br />
   result = result.replace(/\n/g, "<br />");
 
   return result;
 }
 
 const faqQuestions = [
+  {
+    question: "¿Trabajan únicamente en la Ciudad Autónoma de Buenos Aires?",
+    answer:
+      "No. Actuamos tanto en CABA como en diversas jurisdicciones del interior del país.",
+  },
   {
     question: "¿Qué es la mediación?",
     answer:
@@ -83,6 +82,11 @@ const faqQuestions = [
     question: "¿Ofrecen consultas iniciales?",
     answer:
       "Sí. La primera consulta nos permite entender tu situación y proponerte un plan de acción sin compromiso.",
+  },
+  {
+    question: "¿Puedo consultar sin tener un juicio iniciado?",
+    answer:
+      "Sí. Ofrecemos orientación preventiva para resolver conflictos antes de que escalen a instancias judiciales.",
   },
   {
     question: "¿Qué tipo de conflictos resuelven?",
@@ -115,6 +119,16 @@ const faqQuestions = [
       "Sí. Diseñamos acuerdos anticipados, pactos sucesorios y protocolos familiares que permiten resolver de forma extrajudicial. Nuestro enfoque busca preservar los vínculos personales sin resignar tus derechos.",
   },
   {
+    question: "¿Qué implica una causa en el fuero penal económico o tributario?",
+    answer:
+      "Este tipo de causas suelen estar vinculadas a presuntos delitos financieros, cambiarios, evasión impositiva o infracciones ante organismos como la AFIP o el Banco Central. Brindamos asesoramiento integral, estrategia de defensa y representación en todas las instancias del proceso.",
+  },
+  {
+    question: "¿También asesoran a empresas?",
+    answer:
+      "Sí. Contamos con amplia experiencia en el asesoramiento y defensa de empresas en temas penales y tributarios, incluyendo sumarios ante el BCRA y la AFIP, análisis de riesgos penales y litigios complejos.",
+  },
+  {
     question: "¿Qué es la planificación sucesoria y por qué debería hacerla?",
     answer:
       "Es un proceso legal que permite organizar el destino de tu patrimonio antes del fallecimiento, evitando conflictos futuros. Es especialmente útil si tenés bienes valiosos, empresas familiares o hijos de diferentes vínculos. Es posible establecer reglas claras de administración, reparto o usufructo.",
@@ -136,7 +150,6 @@ const faqQuestions = [
   },
 ];
 
-// Simple Accordion component
 function Accordion({ items }) {
   const [openIndex, setOpenIndex] = useState(null);
 
@@ -179,9 +192,6 @@ function Accordion({ items }) {
     </div>
   );
 }
-
-// FAQ2 with Framer Motion animation when in viewport
-import { useRef } from "react";
 
 export const FAQ2 = () => {
   const ref = useRef(null);

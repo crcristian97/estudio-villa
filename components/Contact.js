@@ -2,7 +2,6 @@
 import React, { useState, useRef } from "react";
 import { MapPin, Clock } from "lucide-react";
 import { motion } from "framer-motion";
-import emailjs from "@emailjs/browser";
 
 const fadeInRight = {
   hidden: { opacity: 0, x: 80 },
@@ -19,10 +18,10 @@ export const Contact = () => {
     name: "",
     email: "",
     message: "",
-    sendCopy: false,
   });
   const [errors, setErrors] = useState({});
   const [submitted, setSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const validate = () => {
     const newErrors = {};
@@ -33,33 +32,34 @@ export const Contact = () => {
       newErrors.email = "El email no es válido.";
     }
     if (!form.message.trim()) newErrors.message = "El mensaje es obligatorio.";
-    return newErrors;
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const validation = validate();
-    setErrors(validation);
-    if (Object.keys(validation).length === 0) {
-      try {
-        await emailjs.send(
-          "service_h5oymfh",
-          "template_3hujj07",
-          {
-            name: form.name,
-            email: form.email,
-            message: form.message,
-            reply_to: form.email,
-            to_email: "crcristian97.cc@gmail.com",
-          },
-          process.env.NEXT_PUBLIC_EMAILJS_KEY
-        );
+    if (!validate()) return;
+
+    setIsLoading(true);
+    const { name, email, message } = form;
+    const data = { name, email, message };
+    try {
+      const res = await fetch('/api/send', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+
+      if (res.ok) {
         setSubmitted(true);
-        setForm({ name: "", email: "", message: "", sendCopy: false });
+        setForm({ name: "", email: "", message: "" });
+        setErrors({ name: "", email: "", message: "" });
         setTimeout(() => setSubmitted(false), 4000);
-      } catch (error) {
-        console.error("Error al enviar el mensaje:", error);
       }
+    } catch (error) {
+      console.error('Error:', error);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -117,6 +117,7 @@ export const Contact = () => {
                         onChange={handleChange}
                         placeholder="Nombre"
                         autoComplete="name"
+                        disabled={isLoading}
                       />
                       {errors.name && (
                         <p className="text-xs mt-1" style={{ color: "#ef4444" }}>
@@ -138,6 +139,7 @@ export const Contact = () => {
                         onChange={handleChange}
                         placeholder="Email"
                         autoComplete="email"
+                        disabled={isLoading}
                       />
                       {errors.email && (
                         <p className="text-xs mt-1" style={{ color: "#ef4444" }}>
@@ -158,6 +160,7 @@ export const Contact = () => {
                         value={form.message}
                         onChange={handleChange}
                         placeholder="Mensaje"
+                        disabled={isLoading}
                       />
                       {errors.message && (
                         <p className="text-xs mt-1" style={{ color: "#ef4444" }}>
@@ -169,8 +172,9 @@ export const Contact = () => {
                       type="submit"
                       className="mb-4 sm:mb-6 w-full rounded px-6 pt-2.5 pb-2 text-xs sm:text-sm font-medium uppercase leading-normal lg:mb-0 cursor-pointer transition-all duration-200 hover:bg-[#1C2D44] hover:scale-105 hover:shadow-lg"
                       style={{ backgroundColor: "#3D5C76", color: "#fff" }}
+                      disabled={isLoading}
                     >
-                      Enviar
+                      {isLoading ? "Enviando..." : "Enviar"}
                     </button>
                     {submitted && (
                       <div className="text-center text-sm mt-2" style={{ color: "#22c55e" }}>

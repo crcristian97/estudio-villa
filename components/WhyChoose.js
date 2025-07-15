@@ -1,80 +1,97 @@
 "use client";
-import { CheckCircle } from "lucide-react";
+import { CheckCircle, Handshake, Briefcase, Shield, Users, FileText } from "lucide-react";
 import { motion } from "framer-motion";
 
 const features = [
   {
-    title: "Más que abogados, facilitadores de acuerdos",
+    title: "Facilitadores de acuerdos",
     description:
       "Acompañamos a nuestros clientes en la construcción de soluciones consensuadas, priorizando el diálogo y la prevención de conflictos.",
-    icon: <CheckCircle className="text-white w-7 h-7" />,
+    icon: <Handshake className="text-white w-7 h-7" />,
   },
   {
-    title: "Experiencia en familias empresarias y conflictos societarios",
+    title: "Experiencia en empresas",
     description:
       "Amplia trayectoria asesorando a familias empresarias y resolviendo disputas societarias con visión estratégica.",
-    icon: <CheckCircle className="text-white w-7 h-7" />,
+    icon: <Briefcase className="text-white w-7 h-7" />,
   },
   {
-    title: "Soluciones jurídicas con enfoque humano",
+    title: "Soluciones jurídicas",
     description:
       "Entendemos la importancia de los vínculos y diseñamos estrategias legales que cuidan tanto lo patrimonial como lo personal.",
     icon: <CheckCircle className="text-white w-7 h-7" />,
   },
   {
-    title: "Confidencialidad, transparencia y seguimiento activo",
+    title: "Confidencialidad y transparencia",
     description:
       "Garantizamos absoluta reserva, comunicación clara y acompañamiento permanente en cada etapa del proceso.",
-    icon: <CheckCircle className="text-white w-7 h-7" />,
+    icon: <Shield className="text-white w-7 h-7" />,
   },
   {
-    title: "Resultados sostenibles que cuidan vínculos y patrimonio",
+    title: "Enfoque en lo humano y patrimonio",
     description:
       "Buscamos soluciones duraderas que protejan tus relaciones y tu legado familiar o empresarial.",
-    icon: <CheckCircle className="text-white w-7 h-7" />,
+    icon: <Users className="text-white w-7 h-7" />,
+  },
+  {
+    title: "Asesoramiento en conflictos laborales",
+    description:
+      "Brindamos asesoramiento y representación en conflictos entre empleador y empleado, despidos con o sin causa, redacción y respuesta de cartas documento, enfermedades y licencias, trámites ante el SECLO y cualquier otra cuestión de Derecho del Trabajo.",
+    icon: <FileText className="text-white w-7 h-7" />,
   },
 ];
+
+function FeatureCard({ feature, idx }) {
+  return (
+    <motion.div
+      key={idx}
+      className="flex flex-col items-start bg-[#3E5C76] rounded-2xl shadow-lg px-7 py-8 sm:px-8 sm:py-10 md:px-10 md:py-12 hover:bg-[#1D2D44] transition-shadow transition-colors h-full"
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.3 }}
+      transition={{ duration: 0.5, delay: idx * 0.07 }}
+    >
+      <div className="flex items-center w-full justify-start mb-3 gap-3">
+        <span className="flex-shrink-0 flex items-center">{feature.icon}</span>
+        <h3 className="text-lg font-semibold text-white text-left">{feature.title}</h3>
+      </div>
+      <p className="text-white text-sm text-left w-full leading-relaxed">{feature.description}</p>
+    </motion.div>
+  );
+}
 
 export default function WhyChoose() {
   return (
     <section className="w-full py-20 bg-white">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto items-start">
-          {/* Left column: Text */}
-          <motion.div
-            className="h-full flex"
-            initial={{ opacity: 0, x: -60 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.6 }}
-            transition={{ duration: 0.7, ease: "easeOut" }}
+        <motion.div
+          className="mb-12 text-center"
+          initial={{ opacity: 0, y: -40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.7 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+        >
+          <h2 className="text-3xl md:text-4xl font-semibold text-[#1D2D44] mb-4 tracking-tight">
+            ¿Por qué elegir Estudio Villa?
+          </h2>
+          <p className="text-lg text-[#3E5C76] font-medium">
+            El respaldo en el que podés confiar
+          </p>
+        </motion.div>
+        <div className="max-w-6xl mx-auto">
+          <div
+            className="
+              grid 
+              grid-cols-1 
+              sm:grid-cols-2 
+              lg:grid-cols-3 
+              gap-8 
+              md:gap-10
+            "
           >
-            <div className="w-full">
-              <h2 className="text-3xl md:text-4xl font-semibold text-[#1D2D44] mb-4 tracking-tight">
-                ¿Por qué elegir Estudio Villa?
-              </h2>
-              <p className="text-lg text-[#3E5C76] font-medium mb-2">
-                El respaldo en el que podés confiar
-              </p>
-            </div>
-          </motion.div>
-          {/* Right column: Features */}
-          <div>
-            <div className="grid grid-cols-1 gap-6">
-              {features.map((feature, idx) => (
-                <div
-                  key={idx}
-                  className="flex items-start gap-4 bg-[#3E5C76] rounded-xl shadow-md p-6 hover:bg-[#1D2D44] transition-shadow transition-colors"
-                >
-                  <div className="flex-shrink-0">{feature.icon}</div>
-                  <div>
-                    <h3 className="text-xl font-semibold text-white mb-1">
-                      {feature.title}
-                    </h3>
-                    <p className="text-white">{feature.description}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
+            {features.map((feature, idx) => (
+              <FeatureCard feature={feature} idx={idx} key={idx} />
+            ))}
           </div>
         </div>
       </div>

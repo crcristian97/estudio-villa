@@ -23,7 +23,7 @@ export async function POST(request) {
     }
 
     const emailResult = await resend.emails.send({
-      from: 'Estudio Jurídico <info@estudiodeabogadosgomezlopez.com.ar>',
+      from: 'Estudio Jurídico <estudio@robertovillayasociados.com.ar>',
       to: 'jllopez1269@gmail.com',
       subject: `Nuevo mensaje de ${name}`,
       html: `
